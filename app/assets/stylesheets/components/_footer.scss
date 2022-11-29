@@ -1,0 +1,59 @@
+.footer {
+  background: $light-gray;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 300px;
+  padding: 50px 50px;
+  color: $dark-blue;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+.logo {
+  height: 200px;
+}
+.logo-2 {
+  height: 120px;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  color: $dark-blue;
+}
+.footer-links a {
+  color: $dark-blue;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: $red;
+}
+
+.footer-card {
+  display: flex;
+  align-items: center;
+  color: $dark-blue;
+}
+
+.footer-card a {
+  color: $dark-blue;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0px 10px;
+}
+
+.footer-card a:hover {
+  opacity: 1;
+}
+
+.footer-list {
+  list-style: none;
+  font-style: sans-serif;
+  font-size: 20px;
+}
