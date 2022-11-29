@@ -3,7 +3,7 @@
 }
 
 .general-info {
-  background-color: $light-gray;
+  background-color: $yellow;
 }
 
 .condo-docs {
@@ -20,4 +20,18 @@
 
 .condo-messages {
   background-color: $orange;
+}
+
+.landing-text {
+  width: 600px;
+  font-family: "Montserrat";
+  font-size: 40px;
+  color: $orange;
+  text-transform: uppercase;
+}
+
+.typed-letters {
+  font-size: 80px;
+  padding-left: 70px;
+  margin-top: -20px;
 }
