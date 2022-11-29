@@ -77,6 +77,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+
+  gem "pundit"
 end
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
