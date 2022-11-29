@@ -1,10 +1,3 @@
-<%if user_signed_in?%>
-  <%=current_user.full_name%>
-  <%=link_to "signout", destroy_user_session_path, data: {turbo_method: :delete}%>
-<% else %>
-  <%=link_to "log in", new_user_session_path%>
-<%end%>
-
 <div class="landing-card general-info">
   <div class="d-flex justify-content-between px-5">
     <div class="d-flex justify-content-center">
@@ -14,20 +7,121 @@
       </div>
     </div>
 
-    <div>
-      <img src="https://i.ibb.co/vDbBFyZ/vizinapp.png" width="600" height="600" alt="vizinhos em comunidade">
+    <div class="mt-2">
+      <img src="https://i.ibb.co/vDbBFyZ/vizinapp.png" width="590" height="590" alt="vizinhos em comunidade">
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-around mt-3">
+    <img src="https://i.ibb.co/vwCzSH9/cond6.png" width="80" height="80">
+    <img src="https://i.ibb.co/WDnxm2y/cond1.png" width="80" height="80">
+    <img src="https://i.ibb.co/w0dD7jD/cond2.png" width="80" height="80">
+    <img src="https://i.ibb.co/p4g3JFd/cond3.png" width="80" height="80">
+    <img src="https://i.ibb.co/wC5WYW9/cond5.png" width="80" height="80">
+    <img src="https://i.ibb.co/D54Yrxj/cond7.png" width="80" height="80">
+    <img src="https://i.ibb.co/yp82vbB/cond4.png" width="80" height="80">
+  </div>
+</div>
+
+<div class="landing-card condo-docs py-5">
+  <div>
+    <div class="d-flex justify-content-center">
+      <div class="mx-5">
+        <img src="https://i.ibb.co/gRy6wP9/undraw-my-files-swob.png" width="500">
+      </div>
+      <div class="text-center">
+         <p>Acesso na palma da</p>
+         <p class="marked-text">mão</p>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <div class="pt-5">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Atas de reunião</li>
+          <li class="list-group-item">Regimentos</li>
+          <li class="list-group-item">Documentos importantes</li>
+        </ul>
+      </div>
+      <div class="px-4">
+        <img src="https://i.ibb.co/KG5HZBn/undraw-folder-files-re-2cbm.png" width="500">
+      </div>
     </div>
   </div>
 </div>
 
-<div class="landing-card condo-messages">
+<div class="landing-card condo-areas py-5">
+  <div>
+    <div class="d-flex justify-content-center">
+      <div class="mx-5">
+        <img src="https://i.ibb.co/RQcmpP1/undraw-date-picker-re-r0p8-1.png" width="400">
+      </div>
+
+      <div class="mx-5">
+        <img src="https://i.ibb.co/f28zY6T/undraw-partying-re-at7f.png" width="400">
+      </div>
+
+      <div class="mx-5">
+        <img src="https://i.ibb.co/pZRzTZ0/undraw-barbecue-3x93-1.png" width="320">
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <div class="pt-5">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Não precisa esperar</li>
+          <li class="list-group-item">Agendamento imediato</li>
+          <li class="list-group-item">Mais comodidade</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="landing-card condo-docs">
+<div class="landing-card condo-agenda py-5">
+  <div>
+    <div class="mb-5 px-5">
+      <p class="marked-text">Agenda em tempo real</p>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <div class="pt-5">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Eventos no condomínio</li>
+          <li class="list-group-item">Locação de churrasqueira</li>
+          <li class="list-group-item">Agendamento de festas no salão</li>
+          <li class="list-group-item">Manutenções periódicas</li>
+        </ul>
+      </div>
+      <div class="px-4">
+        <img src="https://i.ibb.co/W2sdS0w/undraw-schedule-re-2vro.png" width="480">
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="landing-card condo-areas">
-</div>
+<div class="landing-card condo-messages py-3">
+  <div>
 
-<div class="landing-card condo-agenda">
+    <div class="d-flex justify-content-around pt-5 px-4">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="fa-regular fa-comment"></i> Chat online</li>
+        <li class="list-group-item"><i class="fa-solid fa-file"></i> Formulários</li>
+        <li class="list-group-item"><i class="fas fa-folder"></i> Pasta de atas</li>
+      </ul>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="fa-regular fa-calendar"></i> Calendários</li>
+        <li class="list-group-item"><i class="fas fa-newspaper"></i> News</li>
+        <li class="list-group-item"><i class="fa-solid fa-circle-info"></i> Informções</li>
+      </ul>
+    </div>
+
+    <div class="d-flex justify-content-center pt-5">
+      <div class="mx-5">
+        <img src="https://i.ibb.co/Zz09J3z/undraw-inbox-cleanup-re-jcbh.png" width="500">
+      </div>
+    </div>
+
+  </div>
 </div>

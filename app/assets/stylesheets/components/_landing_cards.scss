@@ -1,37 +1,100 @@
 .landing-card {
+  font-family: "Montserrat";
+  text-transform: uppercase;
   height: 700px;
+  font-size: 40px;
 }
 
 .general-info {
-  background-color: $yellow;
-}
-
-.condo-docs {
-  background-color: $green;
-}
-
-.condo-areas {
   background-color: $dark-blue;
-}
-
-.condo-agenda {
-  background-color: $yellow;
-}
-
-.condo-messages {
-  background-color: $orange;
 }
 
 .landing-text {
   width: 600px;
-  font-family: "Montserrat";
-  font-size: 40px;
+  margin-top: 180px;
+  padding-left: 70px;
   color: $orange;
-  text-transform: uppercase;
 }
 
 .typed-letters {
-  font-size: 80px;
   padding-left: 70px;
   margin-top: -20px;
+  color: white;
+  font-size: 80px;
+}
+
+.list-group-item {
+  background-color: transparent;
+}
+
+.condo-docs {
+  background-color: $light-gray;
+  color: $green;
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+}
+
+.condo-docs .list-group-item {
+  color: $green;
+  font-size: 40px;
+}
+
+.condo-docs .marked-text {
+  width: 180px;
+  background-color: $green;
+  color: $light-gray;
+  border-radius: 30px;
+}
+
+.condo-areas {
+  background-color: $orange;
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+}
+
+.condo-areas .list-group-item {
+  color: white;
+  font-size: 40px;
+}
+
+.condo-areas .marked-text {
+  width: 180px;
+  background-color: white;
+  color: $orange;
+  border-radius: 30px;
+}
+
+.condo-agenda {
+  background-color: $light-gray;
+  color: $dark-blue;
+  font-size: 60px;
+}
+
+.condo-agenda .list-group-item {
+  color: $dark-blue;
+  font-size: 40px;
+}
+
+.condo-agenda .marked-text {
+  width: 880px;
+  background-color: $yellow;
+  color: $light-gray;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.condo-messages {
+  background-color: $yellow;
+  color: $dark-blue;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.condo-messages .list-group-item {
+  color: $orange;
+  font-size: 40px;
 }
