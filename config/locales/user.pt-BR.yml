@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      user: "Usuários"
+    attributes:
+      user:
+        user_name: "Nome de Usuário"
+        full_name: "Nome Completo"
+        email: "E-Mail"
+        admin: "Administrador"
+        password: "Senha"
+        password_confirmation: "Digite a mesma senha"

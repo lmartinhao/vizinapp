@@ -3,4 +3,14 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def footer
+    render 'show'
+  end
+
+  private
+
+  def fixed_footer
+    @position = "fixed"
+  end
 end
