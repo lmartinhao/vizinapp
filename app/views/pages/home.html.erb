@@ -1,22 +1,33 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 <%if user_signed_in?%>
   <%=current_user.full_name%>
   <%=link_to "signout", destroy_user_session_path, data: {turbo_method: :delete}%>
 <% else %>
   <%=link_to "log in", new_user_session_path%>
 <%end%>
-<div class="general-info">
+
+<div class="landing-card general-info">
+  <div class="d-flex justify-content-between px-5">
+    <div class="d-flex justify-content-center">
+      <div class="landing-text">
+         <p>A comunicação no seu condomínio pode ser</p>
+         <p class="typed-letters"><strong><span data-controller="typed-js"></span></strong></p>
+      </div>
+    </div>
+
+    <div>
+      <img src="https://i.ibb.co/vDbBFyZ/vizinapp.png" width="600" height="600" alt="vizinhos em comunidade">
+    </div>
+  </div>
 </div>
 
-<div class="condo-docs">
+<div class="landing-card condo-messages">
 </div>
 
-<div class="condo-areas">
+<div class="landing-card condo-docs">
 </div>
 
-<div class="condo-agenda">
+<div class="landing-card condo-areas">
 </div>
 
-<div class="general-messages">
+<div class="landing-card condo-agenda">
 </div>
