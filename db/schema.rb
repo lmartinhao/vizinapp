@@ -23,7 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_194351) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name", "address", "city", "uf_id"], name: "index_condos_on_name_and_address_and_city_and_uf_id", unique: true
     t.index ["uf_id"], name: "index_condos_on_uf_id"
     t.index ["user_id"], name: "index_condos_on_user_id"
   end
@@ -38,12 +37,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_194351) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
-<<<<<<< HEAD
-=======
     t.string "user_name", default: "", null: false
     t.string "full_name", default: "", null: false
     t.boolean "admin", default: false, null: false
->>>>>>> master
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
