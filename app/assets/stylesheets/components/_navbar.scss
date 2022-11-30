@@ -13,25 +13,28 @@
 
 .navbar {
   background: #F7F8FD;
-  height: 80px; 
+  height: 80px;
   padding: 30px;
   display: flex;
   justify-content: space-between;
   width: 100%;
   box-sizing: border-box;
 }
-.btn {
+
+.navbar .btn {
   color: #81B29A;
+
+  &:hover {
+    color: #E07A5F;
+  }
 }
-.btn:hover {
-  color: #E07A5F;
-  
-}
-.btn-success {
+
+.navbar .btn-success {
   color: #F7F8FD;
-}
-.btn-success:hover {
-  color: #F7F8FD;
-  background: #E07A5F;
-  border-color: #E07A5F;
+
+  &:hover {
+    color: #F7F8FD;
+    background: #E07A5F;
+    border-color: #E07A5F;
+  }
 }

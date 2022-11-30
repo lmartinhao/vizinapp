@@ -7,7 +7,7 @@
 <% end %>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Esqueceu sua senha?", new_password_path(resource_name), class:"btn btn-warning" %><br />
+  <%= link_to "Redefinir senha", new_password_path(resource_name), class:"btn btn-warning" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

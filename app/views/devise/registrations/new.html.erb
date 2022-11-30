@@ -1,37 +1,38 @@
-<div class="container" style="max-width: 500px;">
-
-  <h2 class="title">Sign up</h2>
-
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {data: {turbo: false, controller: "validation", "validation-target": "fields"}}) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.hidden_field :admin, value: true%>
-      <%= f.input :user_name,
-                  required: false,
-                  autofocus: true,
-                  input_html: { "data-action": "blur->validation#send", autocomplete: "email" } %>
-    <div data-validation-target="errorMessage"></div>
-      <%= f.input :full_name,
-                  required: true %>
-      <%= f.input :email,
-                  required: true,
-                  input_html: { autocomplete: "email" } %>
-      <%= f.input :password,
-                  required: false,
-                  input_html: { autocomplete: "current-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
+<%= render "devise/shared/login_navbar" %>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login mb-4">
+        <h2 class="title">Sign up</h2>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {data: {turbo: false, controller: "validation", "validation-target": "fields"}}) do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.hidden_field :admin, value: true%>
+            <%= f.input :user_name,
+                        required: false,
+                        autofocus: true,
+                        input_html: { "data-action": "blur->validation#send", autocomplete: "email" } %>
+            <div data-validation-target="errorMessage"></div>
+            <%= f.input :full_name,
+                        required: true %>
+            <%= f.input :email,
+                        required: true,
+                        input_html: { autocomplete: "email" } %>
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password" } %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+          </div>
+          <div class="form-actions d-grid">
+            <%= f.button :submit, "Cadastrar", class:"btn btn-primary" %>
+          </div>
+        <% end %>
+        <div class="d-flex justify-content-center my-3">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
     </div>
-
-    <div class="form-actions d-grid">
-      <%= f.button :submit, "Cadastrar", class:"btn btn-primary" %>
-    </div>
-  <% end %>
-
-  <div class="d-flex justify-content-center my-3 pb-3">
-    <%= render "devise/shared/links" %>
   </div>
-
 </div>
