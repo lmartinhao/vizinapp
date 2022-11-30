@@ -40,24 +40,24 @@ end
 puts("Estados inseridos")
 
 puts("Criando User admin")
-@user = User.create(
+@user = User.create!(
   user_name: Faker::Name.first_name,
   full_name: Faker::Name.name,
   email: Faker::Internet.email,
   admin: true,
-  password: "123123"
+  password: "123123",
+  condo: Condo.create!(
+    name: Faker::Name.name,
+    address: Faker::Address.street_name,
+    number: Faker::Address.building_number,
+    city: Faker::Address.city,
+    uf: Uf.all.sample
+  )
 )
-@user.save
-puts("User admin inserido")
+#@user.save
+#puts("User admin inserido")
 
-puts("Criando Condominio")
-c = Condo.new(
-  name: Faker::Name.name,
-  address: Faker::Address.street_name,
-  number: Faker::Address.building_number,
-  city: Faker::Address.city,
-  uf: Uf.all.sample,
-  user: @user
-)
-c.save
-puts("Condominio inserido")
+#puts("Criando Condominio")
+#c =
+#c.save
+#puts("Condominio inserido")

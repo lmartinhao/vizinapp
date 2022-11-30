@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :user_name, uniqueness: true, presence: true
   validates :full_name, presence: true
 
-  has_many :condos
+  belongs_to :condo
 
   def admin?
     self.admin
