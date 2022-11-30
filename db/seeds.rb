@@ -45,19 +45,18 @@ puts("Criando User admin")
   full_name: Faker::Name.name,
   email: Faker::Internet.email,
   admin: true,
-  password: "123123",
-  condo: Condo.create!(
+  password: "123123"
+)
+puts("User admin inserido")
+
+#puts("Criando Condominio")
+c = Condo.create!(
     name: Faker::Name.name,
     address: Faker::Address.street_name,
     number: Faker::Address.building_number,
     city: Faker::Address.city,
-    uf: Uf.all.sample
+    uf: Uf.all.sample,
+    user: @user
   )
-)
-#@user.save
-#puts("User admin inserido")
-
-#puts("Criando Condominio")
-#c =
 #c.save
-#puts("Condominio inserido")
+puts("Condominio inserido")
