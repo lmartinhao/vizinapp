@@ -2,7 +2,7 @@
 
   <h2 class="title">Sign up</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {data: {turbo: false}}) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {data: {turbo: false, controller: "validation", "validation-target": "fields"}}) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
@@ -10,7 +10,8 @@
       <%= f.input :user_name,
                   required: false,
                   autofocus: true,
-                  input_html: { autocomplete: "email" } %>
+                  input_html: { "data-action": "blur->validation#send", autocomplete: "email" } %>
+    <div data-validation-target="errorMessage"></div>
       <%= f.input :full_name,
                   required: true %>
       <%= f.input :email,
