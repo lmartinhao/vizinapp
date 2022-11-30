@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_29_194351) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_30_144754) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apartaments", force: :cascade do |t|
+    t.string "ap_number"
+    t.string "floor"
+    t.integer "bedrooms"
+    t.float "square_meters"
+    t.boolean "garage"
+    t.bigint "condo_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["condo_id"], name: "index_apartaments_on_condo_id"
+    t.index ["user_id"], name: "index_apartaments_on_user_id"
+  end
 
   create_table "condos", force: :cascade do |t|
     t.string "name"
@@ -50,6 +64,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_194351) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "apartaments", "condos"
+  add_foreign_key "apartaments", "users"
   add_foreign_key "condos", "ufs"
   add_foreign_key "condos", "users"
 end
