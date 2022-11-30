@@ -1,0 +1,15 @@
+<div class="navbar navbar-expand-sm navbar-vizinapp">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://i.ibb.co/9GNqNy1/2.png", style: "height:80px; width:80px;" %>
+      <%= image_tag "https://i.ibb.co/FmyhFSp/1.png", style: "height:50px; width:50px;" %>
+    <% end %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "btn btn-success" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

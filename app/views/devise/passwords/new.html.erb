@@ -1,8 +1,9 @@
+<%= render "devise/shared/login_navbar" %>
 <div class="container">
   <div class="row d-flex justify-content-center">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="form-login">
-        <h2 class="title">Esqueceu sua senha?</h2>
+        <h2 class="title">Redefinir senha</h2>
         <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
           <%= f.error_notification %>
           <div class="form-inputs">
@@ -12,7 +13,7 @@
                         input_html: { autocomplete: "email" } %>
           </div>
           <div class="form-actions d-grid">
-            <%= f.button :submit, "Recuperar minha senha", class:"btn btn-warning" %>
+            <%= f.button :submit, "Redefinir minha senha", class:"btn btn-info" %>
           </div>
         <% end %>
         <div class="d-flex justify-content-center my-3 pb-3">
