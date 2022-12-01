@@ -18,6 +18,23 @@ ActiveAdmin.setup do |config|
   #
   # config.site_title_image = "logo.png"
 
+  # == Load Paths
+  #
+  # By default Active Admin files go inside app/admin/.
+  # You can change this directory.
+  #
+  # eg:
+  #   config.load_paths = [File.join(Rails.root, 'app', 'ui')]
+  #
+  # Or, you can also load more directories.
+  # Useful when setting namespaces with users that are not your main AdminUser entity.
+  #
+  # eg:
+  #   config.load_paths = [
+  #     File.join(Rails.root, 'app', 'admin'),
+  #     File.join(Rails.root, 'app', 'cashier')
+  #   ]
+
   # == Default Namespace
   #
   # Set the default namespace each administration resource
@@ -54,7 +71,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
-  config.authentication_method = :authenticate_user!
+  # config.authentication_method = :authenticate_admin_user!
 
   # == User Authorization
   #
@@ -91,7 +108,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # (within the application controller) to return the currently logged in user.
-  config.current_user_method = :current_user
+  # config.current_user_method = :current_admin_user
 
   # == Logging Out
   #
@@ -103,7 +120,7 @@ ActiveAdmin.setup do |config|
   # will call the method to return the path.
   #
   # Default:
-  config.logout_link_path = :destroy_user_session_path
+  config.logout_link_path = :destroy_admin_user_session_path
 
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..

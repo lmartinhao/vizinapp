@@ -82,4 +82,5 @@ end
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 gem 'rails-i18n', '~> 7.0.0'
 gem "pundit"
-gem 'activeadmin'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
