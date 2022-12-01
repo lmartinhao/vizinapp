@@ -2,13 +2,12 @@
 @import "home";
 
 .container {
-    padding: 30px;
+    position: relative;
+    padding: 10px;
     border-style: inset;
-    width: 90%;
-}
-
-.container .all {
-    height: 700px;
+    width: 100%;
+    margin-bottom: 10px;
+    overflow:hidden;
 }
 
 .card1 {
@@ -21,41 +20,67 @@
 
 .recados {
     position: relative;
-    top: 0px;
-    left: 0px;
     width: 480px;
-    text-align: center;   
+    text-align: center;  
 }
 
-.container .agendamentos {
+.agendamentos {
     position: relative;
     width: 480px;
-    text-align: center;   
+    text-align: center;
+    height: 160px;
 }
 
-.container .left {
+.left {
     position: relative;
     width: 600px;
     float:left;
     height:100%;
-    border-right:1px dashed #CCC;
-    padding:20px;
-    margin-top:40px;
+    padding:10px;
     margin: 10px;
 }
 
-.container .right {
+.right {
     position: relative;
-    width: 620px;
-    margin-top:20px;
+    width: 670px;
     height:100%;
-    padding:20px;
-    margin-left:740px;
+
+    border-bottom:1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-right:1px solid #ccc;
+    margin-top: 18px;
 }
 
-.container .preview {
+.container .preview-documentos {
     position: relative;
-    width: 500px;
+    width: 320px;
     text-align: center;
+
+    float:left;
+    height: 297px;
 }
 
+.container .preview-agenda {
+    position: relative;
+    width: 320px;
+    text-align: center;
+    height: 297px;
+
+}
+
+.container .preview-formularios {
+    position: relative;
+    width: 320px;
+    text-align: center;
+
+    float:left;
+    height: 297px;
+}
+
+.container .preview-chat {
+    position: relative;
+    width: 320px;
+    text-align: center;
+
+    height: 297px;
+}
