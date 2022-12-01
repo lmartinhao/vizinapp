@@ -39,50 +39,52 @@ ufs.each do |uf|
 end
 puts("Estados inseridos")
 
-puts("Criando User admin")
-@user = User.create!(
-  user_name: Faker::Name.first_name,
-  full_name: Faker::Name.name,
-  email: Faker::Internet.email,
-  admin: true,
-  password: "123123"
-)
-puts("User admin inserido")
-
-puts("Criando Condominio")
-@c = Condo.create!(
-    name: Faker::Name.name,
-    address: Faker::Address.street_name,
-    number: Faker::Address.building_number,
-    city: Faker::Address.city,
-    uf: Uf.all.sample,
-    user: @user
+2.times do
+  puts("Criando User admin")
+  @user = User.create!(
+    user_name: Faker::Name.first_name,
+    full_name: Faker::Name.name,
+    email: Faker::Internet.email,
+    admin: true,
+    password: "123123"
   )
-#c.save
-#@user.condo = @c
-#@user.save
-puts("Condominio inserido")
+  puts("User admin inserido")
 
-puts("Criando Apartamentos")
-10.times do
-  Apartament.create!(
-    ap_number: Faker::Address.secondary_address,
-    floor: "Terreo",
-    bedrooms: rand(2..4),
-    square_meters: rand(50..80),
-    garage: [true, false].sample,
-    condo: @c,
-    user: User.create!(
-      user_name: Faker::Name.first_name,
-      full_name: Faker::Name.name,
-      email: Faker::Internet.email,
-      admin: false,
-      password: "123123"
+  puts("Criando Condominio")
+  @c = Condo.create!(
+      name: Faker::Name.name,
+      address: Faker::Address.street_name,
+      number: Faker::Address.building_number,
+      city: Faker::Address.city,
+      uf: Uf.all.sample,
+      user: @user
     )
-  )
-end
+  #c.save
+  #@user.condo = @c
+  #@user.save
+  puts("Condominio inserido")
 
-puts("Apartamentos inserido")
+  puts("Criando Apartamentos")
+  10.times do
+    Apartament.create!(
+      ap_number: Faker::Address.secondary_address,
+      floor: "Terreo",
+      bedrooms: rand(2..4),
+      square_meters: rand(50..80),
+      garage: [true, false].sample,
+      condo: @c,
+      user: User.create!(
+        user_name: Faker::Name.first_name,
+        full_name: Faker::Name.name,
+        email: Faker::Internet.email,
+        admin: false,
+        password: "123123"
+      )
+    )
+  end
+
+  puts("Apartamentos inserido")
+end
 #@user = User.create!(
 #  user_name: Faker::Name.first_name,
 #  full_name: Faker::Name.name,
@@ -90,3 +92,5 @@ puts("Apartamentos inserido")
 #  admin: false,
 #  password: "123123"
 #)
+
+#User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
