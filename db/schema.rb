@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_174053) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_191847) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_174053) do
     t.index ["user_id"], name: "index_condos_on_user_id"
   end
 
+  create_table "note_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.bigint "condo_id", null: false
+    t.string "title"
+    t.date "noteDate"
+    t.bigint "note_category_id", null: false
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["condo_id"], name: "index_notes_on_condo_id"
+    t.index ["note_category_id"], name: "index_notes_on_note_category_id"
+  end
+
   create_table "ufs", force: :cascade do |t|
     t.integer "id_uf"
     t.string "sigla"
@@ -82,4 +100,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_174053) do
   add_foreign_key "apartaments", "users"
   add_foreign_key "condos", "ufs"
   add_foreign_key "condos", "users"
+  add_foreign_key "notes", "condos"
+  add_foreign_key "notes", "note_categories"
 end
