@@ -1,2 +1,61 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container {
+    padding: 30px;
+    border-style: inset;
+    width: 90%;
+}
+
+.container .all {
+    height: 700px;
+}
+
+.card1 {
+    margin: 50px;
+}
+
+.card2 {
+    margin: 50px;
+}
+
+.recados {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 480px;
+    text-align: center;   
+}
+
+.container .agendamentos {
+    position: relative;
+    width: 480px;
+    text-align: center;   
+}
+
+.container .left {
+    position: relative;
+    width: 600px;
+    float:left;
+    height:100%;
+    border-right:1px dashed #CCC;
+    padding:20px;
+    margin-top:40px;
+    margin: 10px;
+}
+
+.container .right {
+    position: relative;
+    width: 620px;
+    margin-top:20px;
+    height:100%;
+    padding:20px;
+    margin-left:740px;
+}
+
+.container .preview {
+    position: relative;
+    width: 500px;
+    text-align: center;
+}
+

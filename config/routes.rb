@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   post "verify_username", to: "users#verify_username"
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :apartments 
+  resources :apartaments, only: [:index]
 end
