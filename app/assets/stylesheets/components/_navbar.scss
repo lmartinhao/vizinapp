@@ -38,3 +38,20 @@
     border-color: #E07A5F;
   }
 }
+
+.condo-user-type {
+  margin-top: 5px;
+  color: $dark-blue;
+  font-weight: bold;
+  background-color: $yellow;
+  padding: 4px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 4px;
+  margin-right: 3px;
+}
+
+.dropdown-menu {
+  line-height: 40px;
+  background-color: $yellow;
+}
