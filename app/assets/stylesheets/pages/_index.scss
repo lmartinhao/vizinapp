@@ -7,11 +7,10 @@
     width: 100%;
     overflow:hidden;
     background-color: #81B29A;
-    border-style: dotted;
 }
 
 .content {
-    background-color: #F2CC8F;
+    background-color: $light-gray;
     padding-bottom: 60px;
     padding-top: 20px;
 }
@@ -50,14 +49,14 @@
     float:left;
     padding:10px;
     margin-left: 85px;
-    background-color: #81B29A;
+    background-color: $light-gray;
 }
 
 .right {
     position: relative;
     width: 690px;
     height: 665px;
-    background-color: #81B29A;
+    background-color: $light-gray;
 }
 
 .container .preview-documentos {
@@ -112,7 +111,7 @@
 }
 
 .cards {
-    background-color: #81B29A;
+    background-color: $light-gray;
     color: #3D405B;
 }
 
