@@ -1,4 +1,5 @@
 ActiveAdmin.register Condo do
+  actions :all, except: :new
 
   scope :condo, :default => true do |condos|
     Condo.his_condo(current_user.condo.id)
