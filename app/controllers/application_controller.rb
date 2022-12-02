@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
 
     else
 
-      root_path
+      apartaments_path
     end
   end
 
