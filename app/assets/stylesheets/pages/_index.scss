@@ -11,8 +11,9 @@
 }
 
 .content {
-    background-color: #81B29A;
-    padding-bottom: 50px;
+    background-color: #F2CC8F;
+    padding-bottom: 60px;
+    padding-top: 20px;
 }
 
 .card {
@@ -54,8 +55,8 @@
 
 .right {
     position: relative;
-    width: 670px;
-    height:100%;
+    width: 690px;
+    height: 665px;
     background-color: #81B29A;
 }
 
@@ -69,6 +70,7 @@
     padding: 30px;                           
     border-radius: 4px;                        
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    margin-top: 40px;
 }
 
 .container .preview-agenda {
@@ -80,6 +82,7 @@
     padding: 30px;                           
     border-radius: 4px;                        
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    margin-top: 40px;
 
 }
 
@@ -93,6 +96,7 @@
     padding: 30px;                           
     border-radius: 4px;                        
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    margin-top: 10px;
 }
 
 .container .preview-chat {
@@ -104,13 +108,22 @@
     padding: 30px;                           
     border-radius: 4px;                        
     box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    margin-top: 10px;
 }
 
 .cards {
     background-color: #81B29A;
+    color: #3D405B;
 }
 
 .header {
     margin-left: 50px;
-    background-color: #81B29A;
+    color: #3D405B;
+    padding-bottom: 10px;
+}
+
+.logo {
+    height: 45px;
+    float: left;
+    margin-right: 15px;
 }
