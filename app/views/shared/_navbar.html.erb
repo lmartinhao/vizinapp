@@ -3,11 +3,11 @@
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://i.ibb.co/9GNqNy1/2.png", style: "height:80px; width:80px;" %>
       <%= image_tag "https://i.ibb.co/FmyhFSp/1.png", style: "height:50px; width:50px;" %>
-      <a class="btn" a href="#">Mural de Recados</a>
-      <a class="btn" a href="#">Documentos</a>
-      <a class="btn" a href="#">Agenda</a>
-      <a class="btn" a href="#">Formulários</a>
-      <a class="btn" a href="#">Chat</a>
+      <%= link_to "Mural de Recados", notes_path, class: "btn" %>
+      <%= link_to "Documentos", documents_path, class: "btn" %>
+      <%= link_to "Agenda", "#", class: "btn" %>
+      <%= link_to "Formulários", "#", class: "btn" %>
+      <%= link_to "Chat", "#", class: "btn" %>
     <% end %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mt-2">

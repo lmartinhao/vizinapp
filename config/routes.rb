@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'condos/index'
-  devise_for :users
-
 
   #, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  get 'condos/index'
+  devise_for :users
 
   root to: "pages#home"
 
@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   post "verify_username", to: "users#verify_username"
   # Defines the root path route ("/")
   resources :notes
+  resources :documents
   # root "articles#index"
 end
