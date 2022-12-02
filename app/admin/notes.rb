@@ -2,6 +2,18 @@ ActiveAdmin.register Note do
 
   permit_params :title, :noteDate, :note_category_id, :content, :condo_id, :note_category_id
 
+  index do
+    selectable_column
+    id_column
+    column :noteDate, as: "Data"
+    column :title, as: "Título"
+    column :content
+    column :note_category_id do |i|
+      i.note_category.name
+    end
+    actions
+  end
+
   form do |f|
     f.object.condo_id = current_user.condo.id
     f.inputs do
