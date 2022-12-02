@@ -4,18 +4,24 @@
 .container {
     position: relative;
     padding: 10px;
-    border-style: inset;
     width: 100%;
-    margin-bottom: 10px;
     overflow:hidden;
+    background-color: #81B29A;
+    border-style: dotted;
 }
 
-.card1 {
-    margin: 50px;
+.content {
+    background-color: #81B29A;
 }
 
-.card2 {
-    margin: 50px;
+.card {
+    margin: 10px;
+    margin-top: 15px;
+    background: #F7F8FD;                     
+    padding: 30px;                           
+    border-radius: 4px;                        
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    background-color: #F7F8FD;
 }
 
 .recados {
@@ -29,35 +35,39 @@
     width: 480px;
     text-align: center;
     height: 160px;
+    background: #F7F8FD;                     
+    padding: 30px;                           
+    border-radius: 4px;                        
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+
 }
 
 .left {
     position: relative;
     width: 600px;
     float:left;
-    height:100%;
     padding:10px;
-    margin: 10px;
+    margin-left: 85px;
+    background-color: #81B29A;
 }
 
 .right {
     position: relative;
     width: 670px;
     height:100%;
-
-    border-bottom:1px solid #ccc;
-    border-left:1px solid #ccc;
-    border-right:1px solid #ccc;
-    margin-top: 18px;
+    background-color: #81B29A;
 }
 
 .container .preview-documentos {
     position: relative;
     width: 320px;
     text-align: center;
-
     float:left;
     height: 297px;
+    background: white;                     
+    padding: 30px;                           
+    border-radius: 4px;                        
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
 
 .container .preview-agenda {
@@ -65,6 +75,10 @@
     width: 320px;
     text-align: center;
     height: 297px;
+    background: white;                     
+    padding: 30px;                           
+    border-radius: 4px;                        
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
 
 }
 
@@ -72,15 +86,30 @@
     position: relative;
     width: 320px;
     text-align: center;
-
     float:left;
     height: 297px;
+    background: white;                     
+    padding: 30px;                           
+    border-radius: 4px;                        
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
 }
 
 .container .preview-chat {
     position: relative;
     width: 320px;
     text-align: center;
-
     height: 297px;
+    background: white;                     
+    padding: 30px;                           
+    border-radius: 4px;                        
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.cards {
+    background-color: #81B29A;
+}
+
+.header {
+    margin-left: 50px;
+    background-color: #81B29A;
 }
