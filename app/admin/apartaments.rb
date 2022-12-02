@@ -26,4 +26,17 @@ ActiveAdmin.register Apartament do
     actions
   end
 
+  form do |f|
+    f.object.condo_id = current_user.condo.id
+    f.object.user_id = current_user.id
+    f.inputs do
+      f.input :ap_number
+      f.input :floor
+      f.input :bedrooms
+      f.input :square_meters
+      f.input :garage
+    end
+    f.actions
+  end
+
 end
