@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   resources :documents
   resources :schedules
   # root "articles#index"
+  resources :apartaments, only: [:index]
 end
