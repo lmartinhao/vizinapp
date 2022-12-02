@@ -3,34 +3,24 @@
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://i.ibb.co/9GNqNy1/2.png", style: "height:80px; width:80px;" %>
       <%= image_tag "https://i.ibb.co/FmyhFSp/1.png", style: "height:50px; width:50px;" %>
-      <a class="btn" a href="#">Mural de Recados</a>
-      <a class="btn" a href="#">Documentos</a>
-      <a class="btn" a href="#">Agenda</a>
-      <a class="btn" a href="#">Formulários</a>
-      <a class="btn" a href="#">Chat</a>
+      <%= link_to "Mural de Recados", notes_path, class: "btn" %>
+      <%= link_to "Documentos", documents_path, class: "btn" %>
+      <%= link_to "Agenda", schedules_path, class: "btn" %>
+      <%= link_to "Formulários", "#", class: "btn" %>
+      <%= link_to "Chat", "#", class: "btn" %>
     <% end %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <p class="dropdown-item">Condomínio <%= current_user.admin ? "Síndico" : "Morador" %></p>
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%=link_to "signout", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "btn btn-success" %>
-          </li>
-        <% end %>
+      <ul class="navbar-nav me-auto mt-2">
+        <li class="nav-item">
+          <p class="condo-user-type"><%= current_user.admin ? "Síndico" : "Morador" %></p>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <p class="dropdown-item"><%= link_to "Página inicial", "#", class: "dropdown-item" %></p>
+            <%=link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

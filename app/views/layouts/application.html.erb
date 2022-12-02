@@ -15,8 +15,8 @@
     <% if user_signed_in? %>
       <%= render "shared/navbar" %>
       <%= yield %>
-      <%= render "shared/footer" %>
     <% else %>
+      <%= render "devise/shared/login_navbar" %>
       <%= yield %>
     <% end %>
   </body>

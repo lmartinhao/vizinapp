@@ -1,4 +1,28 @@
 GIT
+  remote: https://github.com/activeadmin/activeadmin.git
+  revision: 51689e48ec3faa51127b8462b2219e5e0c09ad8a
+  specs:
+    activeadmin (2.13.1)
+      arbre (~> 1.2, >= 1.2.1)
+      formtastic (>= 3.1, < 5.0)
+      formtastic_i18n (~> 0.4)
+      inherited_resources (~> 1.7)
+      jquery-rails (~> 4.2)
+      kaminari (~> 1.0, >= 1.2.1)
+      railties (>= 6.1, < 7.1)
+      ransack (>= 2.1.1, < 4)
+
+GIT
+  remote: https://github.com/activeadmin/inherited_resources.git
+  revision: f741deee21f930341b000fa827671bff5832a256
+  specs:
+    inherited_resources (1.13.1)
+      actionpack (>= 6.0, < 7.1)
+      has_scope (~> 0.6)
+      railties (>= 6.0, < 7.1)
+      responders (>= 2, < 4)
+
+GIT
   remote: https://github.com/faker-ruby/faker.git
   revision: a76e075027d37e7d9d520963d56c3c4e5147045a
   branch: main
@@ -62,15 +86,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activeadmin (2.13.1)
-      arbre (~> 1.2, >= 1.2.1)
-      formtastic (>= 3.1, < 5.0)
-      formtastic_i18n (~> 0.4)
-      inherited_resources (~> 1.7)
-      jquery-rails (~> 4.2)
-      kaminari (~> 1.0, >= 1.2.1)
-      railties (>= 6.1, < 7.1)
-      ransack (>= 2.1.1, < 4)
     activejob (7.0.4)
       activesupport (= 7.0.4)
       globalid (>= 0.3.6)
@@ -152,11 +167,6 @@ GEM
       domain_name (~> 0.5)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    inherited_resources (1.13.1)
-      actionpack (>= 5.2, < 7.1)
-      has_scope (~> 0.6)
-      railties (>= 5.2, < 7.1)
-      responders (>= 2, < 4)
     io-console (0.5.11)
     irb (1.5.1)
       reline (>= 0.3.0)
@@ -283,6 +293,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -329,7 +341,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activeadmin
+  activeadmin!
   autoprefixer-rails
   bootsnap
   capybara
@@ -339,6 +351,7 @@ DEPENDENCIES
   dotenv-rails
   faker!
   font-awesome-sass (~> 6.1)
+  inherited_resources!
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
@@ -348,6 +361,7 @@ DEPENDENCIES
   rails-i18n (~> 7.0.0)
   sassc-rails
   selenium-webdriver
+  simple_calendar (~> 2.4)
   simple_form!
   sprockets-rails
   stimulus-rails
