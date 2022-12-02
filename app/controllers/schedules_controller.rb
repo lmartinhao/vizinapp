@@ -1,22 +1,16 @@
 class SchedulesController < ApplicationController
-
-  include ActionView::RecordIdentifier
+  skip_before_action :authenticate_user!, only: :index
 
   def index
-    @rides = policy_scope(Ride)
-    @rides = Ride.where(user_id: current_user.id)
+  end
 
+  def show
   end
 
   def update
+  end
 
-    @match = Match.find(params[:id])
-    @match.finished = true
-    authorize @match
-    if @match.save
-
-      redirect_to schedules_path( anchor: dom_id(@match) )
-      flash[:notice] = "Carona confirmada!"
-    end
+  def pundit_policy_scoped?
+    true
   end
 end
