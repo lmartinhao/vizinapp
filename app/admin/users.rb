@@ -1,12 +1,17 @@
 ActiveAdmin.register User do
-  permit_params :email, :password, :password_confirmation
 
+  scope :user, :default => true do |user|
+    User.apartaments_user(current_user)
+  end
+
+  permit_params :user_name, :full_name, :email, :password, :password_confirmation
+  #raise
   index do
     selectable_column
     id_column
+    column :user_name
+    column :full_name
     column :email
-    column :current_sign_in_at
-    column :sign_in_count
     column :created_at
     actions
   end
@@ -17,10 +22,21 @@ ActiveAdmin.register User do
   filter :created_at
 
   form do |f|
-    f.inputs do
-      f.input :email
-      f.input :password
-      f.input :password_confirmation
+    if object.new_record?
+      f.inputs do
+        f.input :user_name
+        f.input :full_name
+        f.input :email
+        f.input :password
+        f.input :password_confirmation
+      end
+    else
+      f.inputs do
+        f.input :full_name
+        f.input :email
+        f.input :password
+        f.input :password_confirmation
+      end
     end
     f.actions
   end

@@ -6,7 +6,8 @@ ActiveAdmin.register Apartament do
     Apartament.has_condo(current_user.condo.id)
   end
 
-  permit_params :ap_number, :floor, :bedrooms, :square_meters, :garage, :condo_id, :user_id
+  permit_params :ap_number, :floor, :bedrooms, :square_meters, :garage, :condo_id, :user_id,
+                user_attributes: [:user_name, :full_name, :email, :password, :password_confirmation]
 
   filter :garage
   filter :condo_id
@@ -21,9 +22,22 @@ ActiveAdmin.register Apartament do
     column :bedrooms
     column :square_meters
     column :garage
-    column :condo_id
-    column :user_id
+    column :user_name
+    column :email
     actions
+  end
+
+  form do |f|
+    f.object.condo_id = current_user.condo.id
+    f.object.user_id = current_user.id
+    f.inputs do
+      f.input :ap_number
+      f.input :floor
+      f.input :bedrooms
+      f.input :square_meters
+      f.input :garage
+    end
+    f.actions
   end
 
 end

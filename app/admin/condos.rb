@@ -1,4 +1,5 @@
 ActiveAdmin.register Condo do
+  actions :all, except: :new
 
   scope :condo, :default => true do |condos|
     Condo.his_condo(current_user.condo.id)
@@ -16,6 +17,8 @@ ActiveAdmin.register Condo do
     column :created_at
     actions
   end
+
+
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
