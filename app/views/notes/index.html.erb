@@ -1,18 +1,12 @@
 <div class= "container">
-  <div class= "title">
-    <h1>MURAL DE RECADOS</h1>
+  <div class="col-7">
+    <h1 class= "title">Mural de recados</h1>
   </div>
 
-  <div class="card-product">
-    <div class="card-product-infos">
-      <div class="d-flex justify-content-between">
-        <div>
-          <h2><%= %>Product name</h2>
-          <p><%= %>Description</p>
-          <a href="" class="btn btn-primary long">Abrir documento</a>
-        </div>
-      </div>
-    </div>
+  <div>
+    <% @notes.each do |note| %>
+      <%= render note %>
+    <% end %>
   </div>
 
 </div>
