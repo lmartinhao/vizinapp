@@ -18,14 +18,13 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-
     if current_user.admin?
 
       admin_root_path
 
     else
 
-      admin_apartament_path(current_user)
+      apartaments_path
     end
   end
 

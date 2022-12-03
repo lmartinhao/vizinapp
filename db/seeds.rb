@@ -46,6 +46,16 @@ ufs.each do |uf|
 end
 puts("Estados inseridos!")
 
+puts("Criando Note Categories..")
+NoteCategory.create!(
+  name: "Evento"
+)
+NoteCategory.create!(
+  name: "Notificação"
+)
+puts("Note Categories inseridos!")
+
+
 puts("Criando User admin..")
 @user = User.create!(
   user_name: "admin.user",

@@ -11,9 +11,11 @@ class User < ApplicationRecord
   has_one :apartament
 
   scope :admin_, -> { where(garage: true)}
-  scope :user_condo, ->(id) { where(id: id) }
 
-  def admin?
-    self.admin
+  scope :user_condo, ->(id) { join(:condo).where(id: id) }
+
+  def self.apartaments_user(user)
+    User.where(id: user.condo.apartaments.map(&:user).select(&:id))
   end
+
 end

@@ -84,3 +84,5 @@ gem 'rails-i18n', '~> 7.0.0'
 gem "pundit"
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'active_admin_datetimepicker'
+gem "simple_calendar", "~> 2.4"
