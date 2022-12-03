@@ -1,5 +1,8 @@
 ActiveAdmin.register User do
   config.filters = false
+
+  actions :all, except: :new
+
   scope :user, :default => true do |user|
     User.apartaments_user(current_user)
   end
