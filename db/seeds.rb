@@ -1,3 +1,19 @@
+@areas = [
+  "Piscina",
+  "Churrasqueira",
+  "Elevador",
+  "Salão de festas",
+  "Salão de jogos",
+  "Quadra",
+]
+
+@notes = [
+  "Manutenção preventiva:",
+  "Manutenção:",
+  "Novas regras de uso para:",
+  "Orçamento de reparo:"
+]
+
 @tipos = [
   "Condomínio",
   "Edifício",
@@ -53,7 +69,7 @@ NoteCategory.create!(
 NoteCategory.create!(
   name: "Notificação"
 )
-puts("Note Categories inseridos!")
+puts("Note Categories inseridas!")
 
 
 puts("Criando User admin..")
@@ -75,11 +91,10 @@ puts("Criando Condomínio..")
   uf: Uf.all.sample,
   user: @user
 )
-
 #c.save
 #@user.condo = @c
 #@user.save
-puts("Condominio inserido!")
+puts("Condomínio inserido!")
 
 puts("Criando Apartamentos..")
 10.times do
@@ -99,8 +114,21 @@ puts("Criando Apartamentos..")
     )
   )
 end
-puts("Apartamentos inserido!")
+puts("Apartamentos inseridos!")
 
 
 #User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 #AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+puts("Criando algumas notas")
+6.times do
+  Note.create!(
+    condo: @c,
+    title: "#{@notes.sample} #{@areas.sample}",
+    noteDate: Date.today,
+    note_category: NoteCategory.all.sample,
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta nibh et augue congue, eget iaculis ligula pharetra. Pellentesque ornare sit amet tellus nec hendrerit. Nunc vel elit sed arcu hendrerit convallis. Sed tortor massa, molestie ac ultricies ut, bibendum eu erat. Praesent risus ante, mattis a leo at, venenatis porttitor ante. Vestibulum egestas dolor elit, et eleifend dui aliquet et. Mauris id dolor vel nisl interdum euismod.
+    Phasellus ut varius diam, ac tristique velit. Praesent congue libero lacus, ut consequat turpis viverra sit amet. Vivamus neque purus, feugiat vitae feugiat eu, auctor et sapien. In euismod auctor orci, vel ornare ex aliquet eu. Suspendisse a faucibus ligula, vel varius sem. Ut erat lorem, venenatis nec dolor quis, hendrerit tempus augue. Aliquam leo nulla, interdum fermentum vulputate ut, semper et ex. In vehicula ultrices mi, nec commodo ante dictum ac. Curabitur fermentum, felis mollis venenatis ultricies, mi purus maximus magna, venenatis porta arcu purus vulputate arcu. Maecenas condimentum rhoncus tortor, vel ultrices nisi malesuada ut. Proin mi arcu, consectetur et turpis ac, convallis auctor sapien."
+  )
+end
+puts("Notas inseridas!")
