@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
 
     else
 
-      root_path
+      admin_apartament_path(current_user)
     end
   end
 
