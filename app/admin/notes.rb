@@ -1,5 +1,5 @@
 ActiveAdmin.register Note do
-
+  config.filters = false
   permit_params :title, :noteDate, :note_category_id, :content, :condo_id, :note_category_id
 
   index do
@@ -25,20 +25,4 @@ ActiveAdmin.register Note do
     end
     f.actions
   end
-
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :condo_id, :title, :noteDate, :note_category_id, :content
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:condo_id, :title, :noteDate, :note_category_id, :content]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-  #form partial: "form"
 end

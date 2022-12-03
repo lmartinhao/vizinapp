@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      condo: "Condomínio"
+    attributes:
+      condo:
+        name: "Nome"
+        address: "Endereço"
+        number: "Número"
+        city: "Cidade"
+        uf_id: "Estado"
+        user_id: "Usuário de Login"
