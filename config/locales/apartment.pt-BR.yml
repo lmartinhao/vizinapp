@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      apartament: "Apartamento"
+    attributes:
+      apartament:
+        ap_number: "Número"
+        floor: "Andar"
+        bedrooms: "Cômodos"
+        square_meters: "Metragem"
+        garage: "Tem Garagem?"
