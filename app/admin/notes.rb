@@ -1,6 +1,6 @@
 ActiveAdmin.register Note do
   config.filters = false
-  permit_params :title, :noteDate, :note_category_id, :content, :condo_id, :note_category_id
+  permit_params :title, :noteDate, :note_category_id, :content, :condo_id, :note_category_id, :note_file
 
   index do
     selectable_column
@@ -22,6 +22,7 @@ ActiveAdmin.register Note do
       f.input :noteDate, as: :date_time_picker
       f.input :note_category, as: :select, collection: NoteCategory.all.collect { |category| [category.name, category.id]}
       f.input :content
+      f.input :note_file, as: :file, pages: true
     end
     f.actions
   end

@@ -5,6 +5,9 @@
   <div class="card-body">
     <h5 class="card-title"><%= note.title %></h5>
     <p class="card-text"><%= note.noteDate %></p>
+    <p class="card-text"><%= note.note_file.key  %></p>
+    <%#=  current_user.avatar.key, crop: :thumb, gravity: :face, class: "avatar-sm dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
     <%= link_to "Mais detalhes", notes_path, class:"btn btn-info btn-sm" %>
   </div>
   <div class="card-footer text-muted">
