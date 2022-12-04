@@ -1,8 +1,56 @@
-<div class= "container">
-  <div class="col-7">
-    <h1 class= "title">Cadastro de Condominio</h1>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login mb-4">
+        <h2 class="title">Novo Condominio</h2>
+        <%= simple_form_for @condo do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+          <div class="form-group">
+            <%= f.input :name,
+                        autofocus: true,
+                        required: true%>
+            <%= f.input :address,
+                        required: true,
+                        input_html: { autocomplete: "" } %>
+            <%= f.input :number,
+                        required: true, wrapper_html: { class: 'passengers' } %>
+            <%= f.input :city,
+                        required: true%>
+            <%= f.association :uf,
+                        required: true%>
+            </div>
+            <div class="form-group">
+            <%= f.simple_fields_for :user do |u|%>
+
+
+              <%= u.hidden_field :admin, value: true%>
+              <%= u.input :user_name,
+                          required: false,
+                          autofocus: true,
+                          input_html: { "data-action": "blur->validation#send", autocomplete: "email" } %>
+              <div data-validation-target="errorMessage"></div>
+              <%= u.input :full_name,
+                          required: true %>
+              <%= u.input :email,
+                          required: true,
+                          input_html: { autocomplete: "email" } %>
+              <%= u.input :password,
+                          required: false,
+                          input_html: { autocomplete: "current-password" } %>
+              <%= u.input :password_confirmation,
+                          required: true,
+                          input_html: { autocomplete: "new-password" } %>
+            <% end %>
+            </div>
+          </div>
+
+          <div class="d-grid form-actions mt-4">
+            <%= f.button :submit, "Cadastrar", class: "btn btn-primary btn-sm" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-
-
 </div>
