@@ -63,14 +63,18 @@ end
 puts("Estados inseridos!")
 
 puts("Criando Note Categories..")
-NoteCategory.create!(
-  name: "Evento"
-)
-NoteCategory.create!(
-  name: "Notificação"
-)
+
+NoteCategory.create!(name: "Evento")
+NoteCategory.create!(name: "Notificação")
+
 puts("Note Categories inseridas!")
 
+puts("Criando Documents Categories..")
+
+DocumentCategory.create!(name: "Regimento")
+DocumentCategory.create!(name: "Ata de Reunião")
+
+puts("Note Categories inseridas!")
 
 puts("Criando User admin..")
 @user = User.create!(
@@ -91,9 +95,6 @@ puts("Criando Condomínio..")
   uf: Uf.all.sample,
   user: @user
 )
-#c.save
-#@user.condo = @c
-#@user.save
 puts("Condomínio inserido!")
 
 puts("Criando Apartamentos..")
@@ -115,10 +116,6 @@ puts("Criando Apartamentos..")
   )
 end
 puts("Apartamentos inseridos!")
-
-
-#User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-#AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 puts("Criando algumas notas")
 6.times do
