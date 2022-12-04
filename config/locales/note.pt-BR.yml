@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      note: "Mural de Recado"
+    attributes:
+      note:
+        title: "Título"
+        noteDate: "Data da realização"
+        note_category_id: "Categoria"
+        content: "Recado"
