@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_205057) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_151542) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_205057) do
     t.index ["user_id"], name: "index_apartaments_on_user_id"
   end
 
+  create_table "areas", force: :cascade do |t|
+    t.bigint "condo_id", null: false
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["condo_id"], name: "index_areas_on_condo_id"
+  end
+
   create_table "condos", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -86,6 +95,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_205057) do
     t.index ["document_category_id"], name: "index_documents_on_document_category_id"
   end
 
+  create_table "meetings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "areas_id", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["areas_id"], name: "index_meetings_on_areas_id"
+    t.index ["user_id"], name: "index_meetings_on_user_id"
+  end
+
   create_table "note_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -102,6 +122,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_205057) do
     t.datetime "updated_at", null: false
     t.index ["condo_id"], name: "index_notes_on_condo_id"
     t.index ["note_category_id"], name: "index_notes_on_note_category_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "areas_id", null: false
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["areas_id"], name: "index_schedules_on_areas_id"
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "ufs", force: :cascade do |t|
@@ -131,10 +162,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_205057) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "apartaments", "condos"
   add_foreign_key "apartaments", "users"
+  add_foreign_key "areas", "condos"
   add_foreign_key "condos", "ufs"
   add_foreign_key "condos", "users"
   add_foreign_key "documents", "condos"
   add_foreign_key "documents", "document_categories"
+  add_foreign_key "meetings", "areas", column: "areas_id"
+  add_foreign_key "meetings", "users"
   add_foreign_key "notes", "condos"
   add_foreign_key "notes", "note_categories"
+  add_foreign_key "schedules", "areas", column: "areas_id"
+  add_foreign_key "schedules", "users"
 end

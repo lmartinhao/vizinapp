@@ -1,0 +1,9 @@
+<%= month_calendar(events: @schedules, end_attribute: :end_time) do |date, schedules| %>
+  <%= date %>
+
+  <% schedules.each do |schedule| %>
+    <div class="schedule">  <-- We will add some style to the meeting class later so let's add it now -->
+      <p><%= schedule.name %></p>
+    </div>
+  <% end %>
+<% end %>
