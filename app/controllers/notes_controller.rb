@@ -10,6 +10,11 @@ class NotesController < ApplicationController
   def show
   end
 
+  def new
+raise
+  end
+
+
   private
 
   def pundit_policy_scoped?
