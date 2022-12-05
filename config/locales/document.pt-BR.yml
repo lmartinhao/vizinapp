@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      document: "Documento"
+    attributes:
+      document:
+        title: "Título"
+        document_category_id: "Categoria"
+        content: "Conteúdo"

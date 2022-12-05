@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   post "verify_username", to: "users#verify_username"
   # Defines the root path route ("/")
-  resources :notes
+  resources :notes, only: %i[index show]
   resources :documents
   resources :schedules
   # root "articles#index"
+  resources :apartaments, only: [:index]
 end

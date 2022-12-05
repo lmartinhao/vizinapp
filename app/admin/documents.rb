@@ -1,18 +1,27 @@
 ActiveAdmin.register Document do
+  config.filters = false
+  permit_params :title, :document_category_id, :content, :condo_id, :document_file
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :condo_id, :title, :document_category_id, :content
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:condo_id, :title, :document_category_id, :content]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  index do
+    selectable_column
+    id_column
+    column :title
+    column :content
+    column :document_category_id do |i|
+      i.document_category.name
+    end
+    actions
+  end
 
+  form do |f|
+    f.object.condo_id = current_user.condo.id
+    f.inputs do
+      f.input :condo_id, input_html: { value: current_user.condo.id }, as: :hidden
+      f.input :title
+      f.input :content
+      f.input :document_category, as: :select, collection: DocumentCategory.all.collect { |category| [category.name, category.id]}
+      f.input :document_file, as: :file, pages: true
+    end
+    f.actions
+  end
 end
