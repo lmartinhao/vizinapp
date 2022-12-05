@@ -11,7 +11,6 @@ class NotesController < ApplicationController
   end
 
   def new
-raise
   end
 
 

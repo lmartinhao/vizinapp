@@ -1,0 +1,12 @@
+<div class="calendar-container">
+  <%= month_calendar(events: @schedules, end_attribute: :end_time) do |date, schedules| %>
+    <%= date %>
+
+    <% schedules.each do |schedule| %>
+      <div class="schedule">
+        <p><%= schedule.name %></p>
+        <small><%= schedule.time unless schedule.multi_days? %></small>
+      </div>
+    <% end %>
+  <% end %>
+</div>
