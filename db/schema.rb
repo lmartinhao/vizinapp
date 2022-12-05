@@ -95,17 +95,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_151542) do
     t.index ["document_category_id"], name: "index_documents_on_document_category_id"
   end
 
-  create_table "meetings", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "areas_id", null: false
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["areas_id"], name: "index_meetings_on_areas_id"
-    t.index ["user_id"], name: "index_meetings_on_user_id"
-  end
-
   create_table "note_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -126,12 +115,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_151542) do
 
   create_table "schedules", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "areas_id", null: false
+    t.bigint "area_id", null: false
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["areas_id"], name: "index_schedules_on_areas_id"
+    t.index ["area_id"], name: "index_schedules_on_area_id"
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
@@ -167,10 +156,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_151542) do
   add_foreign_key "condos", "users"
   add_foreign_key "documents", "condos"
   add_foreign_key "documents", "document_categories"
-  add_foreign_key "meetings", "areas", column: "areas_id"
-  add_foreign_key "meetings", "users"
   add_foreign_key "notes", "condos"
   add_foreign_key "notes", "note_categories"
-  add_foreign_key "schedules", "areas", column: "areas_id"
+  add_foreign_key "schedules", "areas"
   add_foreign_key "schedules", "users"
 end

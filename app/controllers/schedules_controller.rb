@@ -17,9 +17,14 @@ class SchedulesController < ApplicationController
   end
 
   def new
+    @schedule = Schedule.new
   end
 
   def pundit_policy_scoped?
+    true
+  end
+
+  def pundit_policy_authorized?
     true
   end
 end
