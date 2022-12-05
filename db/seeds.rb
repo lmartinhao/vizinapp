@@ -76,6 +76,14 @@ DocumentCategory.create!(name: "Ata de Reunião")
 
 puts("Note Categories inseridas!")
 
+puts("Criando Areas Categories..")
+
+AreaCategory.create!(name: "Churrasqueira")
+AreaCategory.create!(name: "Conjunto de Mesas")
+AreaCategory.create!(name: "Salão de Festas")
+
+puts("Note Categories inseridas!")
+
 puts("Criando User admin..")
 @user = User.create!(
   user_name: "admin.user",

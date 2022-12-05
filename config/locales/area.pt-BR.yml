@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      area: "Itens de Locação"
+    attributes:
+      area:
+        name: "Nome"
+        description: "Descrição"
+        area_category_id: "Categoria"
