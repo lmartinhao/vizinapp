@@ -11,7 +11,7 @@
         <h4 class= "subtitle">Últimos recados</h4>
         <div>
           <% @last_notes.each do |note| %>
-            <%= render note %>
+            <%= render note unless note.nil? %>
           <% end %>
         </div>
       </div>
