@@ -1,5 +1,7 @@
 class CondosController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[ :new ]
+  before_action :authenticate_user!, except: %i[ new create]
+  before_action :pundit_policy_authorized?, only: %i[ new create ]
+  skip_after_action :verify_authorized, only: [:new, :create]
 
   def index
   end
@@ -7,15 +9,15 @@ class CondosController < ApplicationController
   def new
     @condo = Condo.new
     @condo.user = User.new
-    authorize @condo
+    #authorize @condo
   end
 
   def create
     @condo = Condo.new(condo_params)
     @condo.user.admin = true
-    authorize @condo
+    #authorize @condo
     if @condo.save
-      redirect_to admin_root_path
+      redirect_to new_user_session_path
       flash[:notice] = "Parabéns. Seu condomínio foi cadastrado com sucesso!"
     else
       render :new, status: :unprocessable_entity
@@ -40,4 +42,9 @@ class CondosController < ApplicationController
   def pundit_policy_scoped?
     true
   end
+
+  def pundit_policy_authorized?
+    true
+  end
+
 end
