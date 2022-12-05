@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   resources :notes, only: %i[index show]
   resources :documents
   resources :schedules
-  resources :condos, only: %i[index show new create]
+  resources :condos, only: %i[ new create]
   resources :apartaments, only: [:index]
 end
