@@ -20,7 +20,6 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if current_user.admin?
       admin_root_path
-
     else
       apartaments_path
     end
@@ -29,4 +28,14 @@ class ApplicationController < ActionController::Base
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)|(^condos$)/
   end
+
+# def authenticate_user!
+#   if user_signed_in?
+#     if current_user.admin?
+#       redirect_to admin_root_path
+#     else
+#       redirect_to apartaments_path
+#     end
+#   end
+# end
 end
