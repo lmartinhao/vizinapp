@@ -9,7 +9,8 @@
       <p><%= date %></p>
       <% schedules.each do |schedule| %>
         <div class="meeting">
-          <small><small><p><%= schedule.name %> - <strong><%= schedule.kind %></strong></p></small></small>
+          <small><small><small><p class="mb-0"><strong><%= schedule.kind %></strong></p></small></small></small>
+          <small><small><p><%= schedule.name %></p></small></small>
         </div>
       <% end %>
     <% end %>
