@@ -115,7 +115,6 @@ puts("Condomínio inserido!")
 
 puts("Criando Apartamentos..")
 10.times do
-  file = URI.open("https://source.unsplash.com/featured/?profile")
   Apartament.create!(
     ap_number: rand(10..250),
     floor: rand(1..25),
@@ -128,8 +127,7 @@ puts("Criando Apartamentos..")
       full_name: Faker::Name.name,
       email: Faker::Internet.email,
       admin: false,
-      password: "123123",
-      avatar: avatar.attach(io: file, filename: "nes.png", content_type: "image/png")
+      password: "123123"
     )
   )
 end
