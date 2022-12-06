@@ -14,9 +14,10 @@
             <%= render note unless note.nil? %>
           <% end %>
         </div>
+        <%= link_to "Mural de recados", notes_path, class:"d-grid btn btn-warning" %>
       </div>
 
-      <div class="box px-4 py-2">
+      <div class="box px-4 py-2 mt-2">
         <h4 class= "subtitle">Meus agendamentos</h4>
         <ul id="lista-agenda">
           <div class="no-padding">
