@@ -1,3 +1,8 @@
+require "open-uri"
+
+puts 'Cleaning database'
+User.destroy_all
+
 @areas = [
   "Piscina",
   "Churrasqueira",
@@ -85,6 +90,7 @@ AreaCategory.create!(name: "Salão de Festas")
 puts("Note Categories inseridas!")
 
 puts("Criando User admin..")
+file = URI.open("https://source.unsplash.com/featured/?profile")
 @user = User.create!(
   user_name: "admin.user",
   full_name: "User Test",
@@ -92,6 +98,8 @@ puts("Criando User admin..")
   admin: true,
   password: "123123"
 )
+@user.avatar.attach(io: file, filename: "nes.png", content_type: "image/png")
+@user.save
 puts("User admin inserido!")
 
 puts("Criando Condomínio..")
@@ -107,6 +115,7 @@ puts("Condomínio inserido!")
 
 puts("Criando Apartamentos..")
 10.times do
+  file = URI.open("https://source.unsplash.com/featured/?profile")
   Apartament.create!(
     ap_number: rand(10..250),
     floor: rand(1..25),
@@ -119,7 +128,8 @@ puts("Criando Apartamentos..")
       full_name: Faker::Name.name,
       email: Faker::Internet.email,
       admin: false,
-      password: "123123"
+      password: "123123",
+      avatar: avatar.attach(io: file, filename: "nes.png", content_type: "image/png")
     )
   )
 end
