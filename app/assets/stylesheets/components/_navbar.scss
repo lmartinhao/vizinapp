@@ -1,42 +1,23 @@
 .navbar-vizinapp {
-  justify-content: space-between;
-  background: white;
+  background: $yellow;
 }
 
 .navbar-vizinapp .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-vizinapp .navbar-brand img {
-  width: 70px;
+  padding-top: 10px;
 }
 
 .navbar {
-  background: #F7F8FD;
-  height: 80px;
+  height: 60px;
   padding: 30px;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  box-sizing: border-box;
-  border-bottom: 1px solid rgb(186, 186, 186);
 }
 
-.navbar .btn {
-  color: #81B29A;
+.nav-link {
+  color: $orange;
 
   &:hover {
-    color: #E07A5F;
-  }
-}
-
-.navbar .btn-success {
-  color: #F7F8FD;
-
-  &:hover {
-    color: #F7F8FD;
-    background: #E07A5F;
-    border-color: #E07A5F;
+    color: $green;
   }
 }
 
@@ -44,7 +25,7 @@
   margin-top: 5px;
   color: $dark-blue;
   font-weight: bold;
-  background-color: $yellow;
+  background-color: $orange;
   padding: 4px;
   padding-right: 30px;
   padding-left: 30px;
@@ -55,4 +36,15 @@
 .dropdown-menu {
   line-height: 40px;
   background-color: $yellow;
+}
+
+.nav-item {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.active {
+  background-color: $orange;
+  color: white !important;
+  border-radius: 10px;
 }
