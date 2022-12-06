@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_214917) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_151743) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -122,14 +122,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_214917) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "area_id", null: false
+    t.string "name"
+    t.string "kind"
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["area_id"], name: "index_schedules_on_area_id"
-    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "ufs", force: :cascade do |t|
@@ -167,6 +165,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_214917) do
   add_foreign_key "documents", "document_categories"
   add_foreign_key "notes", "condos"
   add_foreign_key "notes", "note_categories"
-  add_foreign_key "schedules", "areas"
-  add_foreign_key "schedules", "users"
 end
