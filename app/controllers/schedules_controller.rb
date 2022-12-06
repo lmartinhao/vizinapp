@@ -7,8 +7,7 @@ class SchedulesController < ApplicationController
 
     start_date = params.fetch(:start_date, Date.today).to_date
     add_notes(start_date)
-    @schedules = Schedule.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
-    #raise
+    @schedules = Schedule.all
   end
 
   def show
@@ -40,10 +39,8 @@ class SchedulesController < ApplicationController
     schedules = Schedule.all
     schedules.each do |schedule|
       schedule.destroy
-      #raise
     end
   end
-
 
   def pundit_policy_scoped?
     true
