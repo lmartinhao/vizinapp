@@ -4,7 +4,11 @@
     <h1 class= "title mx-3">Eventos do mês</h1>
   </div>
 
-    <%= month_calendar do |date| %>
-    <%= date %>
+<%= month_calendar(events: @schedules, end_attribute: :end_time) do |date, schedules| %>
+  <p><%= date %></p>
+  <% schedules.each do |schedule| %>
+  <div class="meeting">
+    <p><%= schedule.name %> - <strong><%= schedule.kind %></strong></p>
+  </div>
   <% end %>
-</div>
+<% end %>
