@@ -1,0 +1,2 @@
+class DetachmentCategory < ApplicationRecord
+end
