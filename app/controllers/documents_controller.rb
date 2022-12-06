@@ -5,6 +5,10 @@ class DocumentsController < ApplicationController
     @documents = Document.all
   end
 
+  def show
+    @document = Documents.find(params[:id])
+  end
+
   def pundit_policy_scoped?
     true
   end
