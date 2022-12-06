@@ -1,53 +1,57 @@
 <div class="container">
   <div class="row d-flex justify-content-center">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-      <div class="form-login mb-4">
-        <h2 class="title">Novo Condominio</h2>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-8">
+      <div class="d-flex justify-content-center">
+          <h2 class="title pt-3">Faça parte do</h2>
+          <%= image_tag "https://i.ibb.co/9GNqNy1/2.png", style: "height:100px; width:100px;" %>
+      </div>
+      <div class="form-login mb-5 mt-0">
         <%= simple_form_for @condo do |f| %>
           <%= f.error_notification %>
 
-          <div class="form-inputs">
-          <div class="form-group">
-            <%= f.input :name,
-                        autofocus: true,
-                        required: true%>
-            <%= f.input :address,
-                        required: true,
-                        input_html: { autocomplete: "" } %>
-            <%= f.input :number,
-                        required: true, wrapper_html: { class: 'passengers' } %>
-            <%= f.input :city,
-                        required: true%>
-            <%= f.association :uf,
-                        required: true%>
-            </div>
-            <div class="form-group">
-            <%= f.simple_fields_for :user do |u|%>
-
-
-              <%= u.hidden_field :admin, value: true%>
-              <%= u.input :user_name,
-                          required: false,
+          <div class="form-inputs d-flex justify-content-between">
+            <div class="form-group col-6 p-2">
+              <h5 class="subtitle pb-2">Condomínio</h5>
+              <%= f.input :name, label: "Nome do condomínio",
                           autofocus: true,
-                          input_html: { "data-action": "blur->validation#send", autocomplete: "email" } %>
-              <div data-validation-target="errorMessage"></div>
-              <%= u.input :full_name,
-                          required: true %>
-              <%= u.input :email,
+                          required: true%>
+              <%= f.input :address,
                           required: true,
-                          input_html: { autocomplete: "email" } %>
-              <%= u.input :password,
-                          required: false,
-                          input_html: { autocomplete: "current-password" } %>
-              <%= u.input :password_confirmation,
-                          required: true,
-                          input_html: { autocomplete: "new-password" } %>
-            <% end %>
+                          input_html: { autocomplete: "" } %>
+              <%= f.input :number,
+                          required: true, wrapper_html: { class: 'passengers' } %>
+              <%= f.input :city,
+                          required: true%>
+              <%= f.association :uf,
+                          required: true%>
             </div>
+            <div class="form-group col-6 p-2">
+              <h5 class="subtitle pb-2">Administrador </h5>
+              <%= f.simple_fields_for :user do |u|%>
+                <%= u.hidden_field :admin, value: true%>
+                <%= u.input :user_name,label: "Usuário",
+                            required: false,
+                            autofocus: true,
+                            input_html: { "data-action": "blur->validation#send", autocomplete: "email" } %>
+                <div data-validation-target="errorMessage"></div>
+                <%= u.input :full_name,
+                            required: true %>
+                <%= u.input :email,
+                            required: true,
+                            input_html: { autocomplete: "email" } %>
+                <%= u.input :password,
+                            required: false,
+                            input_html: { autocomplete: "current-password" } %>
+                <%= u.input :password_confirmation, label: "Confirme a senha",
+                            required: true,
+                            input_html: { autocomplete: "new-password" } %>
+              <% end %>
+            </div>
+
           </div>
 
           <div class="d-grid form-actions mt-4">
-            <%= f.button :submit, "Cadastrar", class: "btn btn-primary btn-sm" %>
+            <%= f.button :submit, "Aproveitar 30 dias grátis", class: "title btn btn-primary" %>
           </div>
         <% end %>
       </div>
