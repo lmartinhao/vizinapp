@@ -8,11 +8,15 @@
   border-radius: 5px;
 }
 
-.card-image {
-  width: 260px;
+.card #card-image {
+  width: 100%;
   height: 200px;
 }
 
 .card {
   border: transparent;
+}
+
+.card-area {
+  height: 450px;
 }

@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_one :condo
   has_one :apartament
+  has_many :schedules
+  has_one_attached :avatar
 
   scope :admin_, -> { where(garage: true)}
 

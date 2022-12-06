@@ -1,6 +1,6 @@
 require "test_helper"
 
-class MeetingsControllerTest < ActionDispatch::IntegrationTest
+class AreaCategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

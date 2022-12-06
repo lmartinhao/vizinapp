@@ -1,3 +1,8 @@
+require "open-uri"
+
+puts 'Cleaning database'
+User.destroy_all
+
 @areas = [
   "Piscina",
   "Churrasqueira",
@@ -76,7 +81,16 @@ DocumentCategory.create!(name: "Ata de Reunião")
 
 puts("Note Categories inseridas!")
 
+puts("Criando Areas Categories..")
+
+AreaCategory.create!(name: "Churrasqueira")
+AreaCategory.create!(name: "Conjunto de Mesas")
+AreaCategory.create!(name: "Salão de Festas")
+
+puts("Note Categories inseridas!")
+
 puts("Criando User admin..")
+file = URI.open("https://source.unsplash.com/featured/?profile")
 @user = User.create!(
   user_name: "admin.user",
   full_name: "User Test",
@@ -84,6 +98,8 @@ puts("Criando User admin..")
   admin: true,
   password: "123123"
 )
+@user.avatar.attach(io: file, filename: "nes.png", content_type: "image/png")
+@user.save
 puts("User admin inserido!")
 
 puts("Criando Condomínio..")

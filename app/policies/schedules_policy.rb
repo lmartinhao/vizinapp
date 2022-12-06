@@ -13,7 +13,7 @@ class SchedulesPolicy < ApplicationPolicy
   end
 
   def new?
-    create?
+    true
   end
 
   def update?

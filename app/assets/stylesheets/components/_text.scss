@@ -12,3 +12,109 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.white-box {
+  width: 27%;
+  background-color: $light-gray;
+  color: $dark-blue;
+  border-radius: 10px;
+}
+
+.white-box-title {
+  font-size: large;
+}
+
+.list-group {
+  font-size: medium;
+  line-height: 50px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.list-group-item {
+  padding-left: 40px;
+}
+
+.pricing-month {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: medium;
+  padding-top: 35px;
+  text-transform: lowercase;
+  padding-left: 5px;
+}
+
+// Plano Básico
+.basic {
+  color: $yellow;
+}
+
+.pricing-basic {
+  margin-left: 27%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 50px;
+  color: $yellow;
+}
+
+.pricing-btn-basic {
+  background-color: $yellow;
+  font-size: medium;
+  color: white;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-decoration: none;
+}
+
+// Plano Premium
+.premium {
+  color: $green;
+}
+
+.pricing-premium {
+  margin-left: 27%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 50px;
+  color: $green;
+}
+
+.pricing-btn-premium {
+  background-color: $green;
+  font-size: medium;
+  color: white;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-decoration: none;
+}
+
+// Plano VIP
+.vip {
+  color: $orange;
+}
+
+.pricing-vip {
+  margin-left: 27%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 50px;
+  color: $orange;
+}
+
+.pricing-btn-vip {
+  background-color: $orange;
+  font-size: medium;
+  color: white;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-decoration: none;
+}
