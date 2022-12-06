@@ -128,4 +128,81 @@
 
   </div>
 </div>
+
+<div class="landing-card plan-info">
+  <div class="title mt-0 pt-5 text-center">
+    <p class="pt-3">Encontre o plano perfeito para seu condomínio</p>
+  </div>
+
+  <div class="d-flex justify-content-around mx-5">
+    <div class="col-4 white-box mt-4">
+      <p class="pt-4 white-box-title text-center">Plano Básico</p>
+      <hr>
+      <div class="d-flex display-content-center">
+        <div class="pricing-basic">
+          R$75
+        </div>
+        <div class="pricing-month">
+          / mês
+        </div>
+      </div>
+      <ul class="list-group list-group-flush ml-4">
+        <li class="list-group-item"><i class="fa-solid fa-user px-2 basic"></i> <strong>1</strong> Administrador</li>
+        <li class="list-group-item"><i class="fa-solid fa-house px-2 basic"></i> <strong>60</strong> Apartamentos</li>
+        <li class="list-group-item"><i class="fa-solid fa-square-phone px-2 basic"></i> Suporte</li>
+        <li class="list-group-item"><i class="fa-solid fa-folder px-2 basic"></i> <strong>50</strong> Documentos</li>
+        <li class="list-group-item"><i class="fa-solid fa-circle-info px-2 basic"></i> <strong>50</strong> Recados por mês</li>
+      </ul>
+      <div class="pricing-btn-basic">
+        <%= link_to "Experimente grátis", new_condo_path, class: "btn pricing-btn-basic" %>
+      </div>
+    </div>
+    <div class="col-4 white-box mt-4">
+      <p class="pt-4 white-box-title text-center">Plano Premium</p>
+      <hr>
+      <div class="d-flex display-content-center">
+        <div class="pricing-premium">
+          R$150
+        </div>
+        <div class="pricing-month">
+          / mês
+        </div>
+      </div>
+      <ul class="list-group list-group-flush ml-4">
+        <li class="list-group-item"><i class="fa-solid fa-user px-2 premium"></i> <strong>5</strong> Administradores</li>
+        <li class="list-group-item"><i class="fa-solid fa-house px-2 premium"></i> <strong>200</strong> Apartamentos</li>
+        <li class="list-group-item"><i class="fa-solid fa-square-phone px-2 premium"></i> Suporte</li>
+        <li class="list-group-item"><i class="fa-solid fa-folder px-2 premium"></i> <strong>100</strong> Documentos</li>
+        <li class="list-group-item"><i class="fa-solid fa-circle-info px-2 premium"></i> <strong>200</strong> Recados por mês</li>
+      </ul>
+      <div class="pricing-btn-premium">
+        <%= link_to "Experimente grátis", new_condo_path, class: "btn pricing-btn-premium" %>
+      </div>
+    </div>
+    <div class="col-4 white-box mt-4">
+      <p class="pt-4 white-box-title text-center">Plano VIP</p>
+      <hr>
+      <div class="d-flex display-content-center">
+        <div class="pricing-vip">
+          R$200
+        </div>
+        <div class="pricing-month">
+          / mês
+        </div>
+      </div>
+      <ul class="list-group list-group-flush ml-4">
+        <li class="list-group-item"><i class="fa-solid fa-user px-2 vip"></i> <strong>20</strong> Administradores</li>
+        <li class="list-group-item"><i class="fa-solid fa-house px-2 vip"></i> <strong>Infinitos</strong> Apartamentos</li>
+        <li class="list-group-item"><i class="fa-solid fa-square-phone px-2 vip"></i> Suporte <strong>24h</strong></li>
+        <li class="list-group-item"><i class="fa-solid fa-folder px-2 vip"></i> <strong>Infinitos</strong> Documentos</li>
+        <li class="list-group-item"><i class="fa-solid fa-circle-info px-2 vip"></i> <strong>Infinitos</strong> Recados por mês</li>
+      </ul>
+      <div class="pricing-btn-vip">
+        <%= link_to "Experimente grátis", new_condo_path, class: "btn pricing-btn-vip" %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <%= render "shared/footer" %>
