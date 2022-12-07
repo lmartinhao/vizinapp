@@ -7,6 +7,16 @@ class ProfilesController < ApplicationController
   def edit
   end
 
+
+
+  def update
+    if @profile.update(profile_params)
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def pundit_policy_scoped?
