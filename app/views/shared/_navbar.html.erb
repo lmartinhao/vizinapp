@@ -63,7 +63,7 @@
             <% end %>
           </div>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <p class="dropdown-item"><%= link_to "Perfil", profile_path, class: "dropdown-item" %></p>
+            <p class="dropdown-item"><%= link_to "Perfil", profiles_path, class: "dropdown-item" %></p>
             <p class="dropdown-item"><%= link_to "Página inicial", apartaments_path, class: "dropdown-item" %></p>
             <%=link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
           </div>
