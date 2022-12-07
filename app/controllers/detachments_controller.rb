@@ -2,7 +2,17 @@ class DetachmentsController < ApplicationController
   before_action :set_detachment, only: %i[ show edit update destroy ]
 
   def index
-    @detachments = Detachment.all
+    if params[:query].present?
+      #sql_query = "title ILIKE :query OR description ILIKE :query"
+      sql_query = <<~SQL
+        detachments.title @@ :query
+        OR detachments.description @@ :query
+      SQL
+      @detachments = Detachment.where(sql_query, query: "%#{params[:query]}%")
+      #raise
+    else
+      @detachments = Detachment.all
+    end
   end
 
   def show

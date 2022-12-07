@@ -4,6 +4,14 @@
       <img src="https://cdn-icons-png.flaticon.com/512/1379/1379905.png" alt="documents-logo" class="logo mt-3">
       <h1 class= "title mx-3">Bazar</h1>
     </div>
+    <%= form_with url: detachments_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Encontre anuncios"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
     <%= link_to "Desapegue", new_detachment_path %>
     <% @detachments.each do |detachment| %>
     <div class="card my-3">
@@ -11,6 +19,7 @@
         <%= detachment.detachment_category.name %>
       </div>
       <div class="card-body">
+      <%= cl_image_tag detachment.photo.key, crop: :thumb, gravity: :face, class: "dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <h5 class="card-title"><%= link_to detachment.title, detachment_path(detachment) %></h5>
         <p class="card-text"><%= detachment.description %></p>
         <% if current_user.apartament.id == detachment.apartament.id%>

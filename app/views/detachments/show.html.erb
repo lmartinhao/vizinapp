@@ -6,7 +6,7 @@
         <div class="form-login mb-4">
           <h2 class="mt-5 mb-3 title"><%= @detachment.title %></h2>
           <p><%= @detachment.description %></p>
-          <%= cl_image_path @detachment.photo.key %>
+          <%= cl_image_tag @detachment.photo.key, crop: :thumb, gravity: :face, class: "dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="mt-5 mb-5">
             <%= link_to "Voltar ao Bazar", detachments_path, class:"btn btn-primary btn-sm" %>
           </div>
