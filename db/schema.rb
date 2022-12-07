@@ -94,7 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_234831) do
 
   create_table "detachments", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.bigint "apartament_id", null: false
     t.bigint "detachment_category_id", null: false
     t.datetime "created_at", null: false
