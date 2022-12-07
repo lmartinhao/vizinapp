@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :schedules
   resources :condos, only: %i[ new create]
   resources :apartaments, only: [:index]
-  resources :detachments, only: [:index, :new, :create, :edit, :update, :destroy, :show]
+  resources :detachments
+  resources :profiles
 end
