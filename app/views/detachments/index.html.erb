@@ -4,7 +4,7 @@
       <img src="https://cdn-icons-png.flaticon.com/512/1379/1379905.png" alt="documents-logo" class="logo mt-3">
       <h1 class= "title mx-3">Bazar</h1>
     </div>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-around">
       <div class="w-75">
         <%= form_with url: detachments_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
@@ -15,9 +15,6 @@
           <%= submit_tag "Buscar", class: "btn btn-primary" %>
         <% end %>
       </div>
-    </div>
-
-    <div class="d-flex justify-content-center mt-5 mb-5">
       <div>
         <%= link_to "Desapegue", new_detachment_path, class: "btn btn-success" %>
       </div>
@@ -26,7 +23,7 @@
       </div>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row my-5 row-cols-1 row-cols-md-3 g-4">
       <% @detachments.each do |detachment| %>
         <div class="col">
           <div class="card h-100 rounded">
@@ -35,7 +32,7 @@
               <h5 class="card-title"><%= link_to detachment.title, detachment_path(detachment), class: "subtitle" %></h5>
               <p class="card-text">Categoria do anúncio: <strong><%= detachment.detachment_category.name %></strong></p>
               <p class="card-text">Anunciante: <%= detachment.apartament.user.full_name %></p>
-              <p class="card-text">Apto/Andar: <%= detachment.apartament.ap_number %>/<%= detachment.apartament.floor %></p>
+              <p class="card-text">Apto <strong><%= detachment.apartament.ap_number %></strong> | <%= detachment.apartament.floor %>º andar</p>
             </div>
             <div class="card-footer d-flex align-center">
               <small class="text-muted"><%= distance_of_time_in_words_to_now(detachment.created_at) %></small><div class="card-body">

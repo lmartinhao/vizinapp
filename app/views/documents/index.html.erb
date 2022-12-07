@@ -1,15 +1,15 @@
-
 <div class="wrapper">
   <div class= "container">
     <div class="d-flex justify-content-start mt-4">
       <img src="https://cdn-icons-png.flaticon.com/512/1379/1379905.png" alt="documents-logo" class="logo mt-3">
       <h1 class= "title mx-3">Pasta de documentos</h1>
     </div>
-
-    <div>
-      <% @documents.each do |document| %>
-        <%= render document %>
-      <% end %>
+    <div class="d-flex justify-content-center">
+      <div class="col-7 mt-4">
+        <% @documents.each do |document| %>
+          <%= render document %>
+        <% end %>
+      </div>
     </div>
     <div class="d-flex justify-content-center mt-5 mb-5">
       <div>

@@ -15,8 +15,8 @@
         <h3 class="subtitle">Dados pessoais <strong><%= current_user.user_name %></strong></h3>
         <p>Nome completo: <%= current_user.full_name %></p>
         <p>Email: <%= current_user.email %></p>
-        <div>
-          <%= link_to "Editar perfil", new_profile_path(@user), class: "btn btn-info btn-sm" %>
+        <div class="my-4">
+          <%= link_to "Editar perfil", edit_user_registration_path(@user), class: "btn btn-info btn-sm" %>
           <%= link_to "Página Inicial", root_path, class: "btn btn-primary btn-sm" %>
         </div>
       </div>
