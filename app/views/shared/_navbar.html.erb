@@ -47,11 +47,11 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%# if current_page?(notes_path) %>
-            <%#= link_to "Chat", notes_path, class: "nav-link active"  %>
-          <%# else %>
-            <%= link_to "Chat", "#", class: "nav-link" %>
-          <%# end %>
+          <% if current_page?(detachments_path) %>
+            <%= link_to "Bazar", detachments_path, class: "nav-link active"  %>
+          <% else %>
+            <%= link_to "Bazar", detachments_path, class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item dropdown">
          <div class="d-flex justify-content-around">
