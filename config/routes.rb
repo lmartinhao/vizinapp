@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   resources :condos, only: %i[new create]
   resources :apartaments, only: [:index]
   resources :detachments
-  resources :profiles
+  resources :profiles, only: [:show]
   resources :meetings
 end

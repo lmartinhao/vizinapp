@@ -1,7 +1,7 @@
 <div class="container mt-4" style="max-width: 80%">
 <h3 class="subtitle">Editar Perfil</h1><br>
   <div class="form-group col-6 p-2">
-    <%= simple_form_for :profile do |f| %>
+    <%= simple_form_for @profile, html: {data: {turbo: false, controller: "validation", "validation-target": "fields"}} do |f|  %>
       <%= f.input :user_name %>
       <%= f.input :email %>
       <%= f.input :password %>

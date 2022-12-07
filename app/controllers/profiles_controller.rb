@@ -4,18 +4,6 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def edit
-  end
-
-
-
-  def update
-    if @profile.update(profile_params)
-      redirect_to root_path
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
 
   private
 

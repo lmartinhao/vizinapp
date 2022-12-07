@@ -8,5 +8,5 @@
   <h3 class="subtitle"><%= current_user.full_name %></h1>
   <h3 class="subtitle"><%= current_user.email %></h1><br>
   <h3 class="subtitle"><%= current_user.user_name %></h1>
-  <%= link_to "Editar perfil", new_profile_path(@user), class: "btn btn-primary btn-sm" %>
+  <%= link_to "Editar perfil", edit_user_registration_path(@user), class: "btn btn-primary btn-sm" %>
 </div>
