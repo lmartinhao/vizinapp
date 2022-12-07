@@ -22,7 +22,9 @@
         <ul id="lista-agenda">
           <div class="no-padding">
             <% @meetings.each do |meeting| %>
-              <%= render meeting unless meeting.nil? %>
+              <% if meeting.user == current_user %>
+                <%= render meeting unless meeting.nil? %>
+              <% end %>
             <% end %>
           </div>
         </ul>
