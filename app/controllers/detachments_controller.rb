@@ -1,5 +1,5 @@
 class DetachmentsController < ApplicationController
-  before_action :set_detachment, only: %i[ show edit update destroy ]
+  before_action :set_detachment, only: %i[show edit update destroy]
 
   def index
     @detachments = Detachment.all

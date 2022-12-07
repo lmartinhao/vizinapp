@@ -11,17 +11,23 @@ class MeetingsController < ApplicationController
   end
 
   def new
+    @meetings = Meeting.all
+    @meeting = Meeting.new
+  end
+
+  def create
+    @meetings = Meeting.all
+    @meeting = Meeting.new(meeting_params)
+    @meeting.user = current_user
+    if @meeting.save
+      redirect_to root_path
+      flash[:notice] = "Reserva concluída com sucesso!"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
-
-  def pundit_policy_scoped?
-    true
-  end
-
-  def pundit_policy_authorized?
-    true
-  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_meeting
@@ -30,6 +36,14 @@ class MeetingsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def meeting_params
-    params.require(:meeting).permit(:user, :area, :schedule_date)
+    params.require(:meeting).permit(:area_id, :schedule_date)
+  end
+
+  def pundit_policy_scoped?
+    true
+  end
+
+  def pundit_policy_authorized?
+    true
   end
 end
