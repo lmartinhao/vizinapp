@@ -96,6 +96,7 @@ puts("Criando Detachment Categories..")
 DetachmentCategory.create!(name: "Comprar")
 DetachmentCategory.create!(name: "Vender")
 DetachmentCategory.create!(name: "Doar")
+DetachmentCategory.create!(name: "Manutenção")
 
 puts("Detachment Categories inseridas!")
 
