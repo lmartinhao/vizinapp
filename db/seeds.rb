@@ -8,8 +8,10 @@ User.destroy_all
   "Churrasqueira",
   "Elevador",
   "Salão de festas",
-  "Salão de jogos",
+  "Salão de jogos adulto",
   "Quadra",
+  "Salão de jogos infantil",
+  "Sala de cinema"
 ]
 
 @notes = [
@@ -84,10 +86,18 @@ puts("Note Categories inseridas!")
 puts("Criando Areas Categories..")
 
 AreaCategory.create!(name: "Churrasqueira")
-AreaCategory.create!(name: "Conjunto de Mesas")
+AreaCategory.create!(name: "Sala de cinema")
 AreaCategory.create!(name: "Salão de Festas")
 
 puts("Note Categories inseridas!")
+
+puts("Criando Detachment Categories..")
+
+DetachmentCategory.create!(name: "Comprar")
+DetachmentCategory.create!(name: "Vender")
+DetachmentCategory.create!(name: "Doar")
+
+puts("Detachment Categories inseridas!")
 
 puts("Criando User admin..")
 file = URI.open("https://source.unsplash.com/featured/?profile")
@@ -134,7 +144,7 @@ end
 puts("Apartamentos inseridos!")
 
 puts("Criando algumas notas")
-6.times do
+2.times do
   Note.create!(
     condo: @c,
     title: "#{@notes.sample} #{@areas.sample}",
@@ -144,4 +154,20 @@ puts("Criando algumas notas")
     Phasellus ut varius diam, ac tristique velit. Praesent congue libero lacus, ut consequat turpis viverra sit amet. Vivamus neque purus, feugiat vitae feugiat eu, auctor et sapien. In euismod auctor orci, vel ornare ex aliquet eu. Suspendisse a faucibus ligula, vel varius sem. Ut erat lorem, venenatis nec dolor quis, hendrerit tempus augue. Aliquam leo nulla, interdum fermentum vulputate ut, semper et ex. In vehicula ultrices mi, nec commodo ante dictum ac. Curabitur fermentum, felis mollis venenatis ultricies, mi purus maximus magna, venenatis porta arcu purus vulputate arcu. Maecenas condimentum rhoncus tortor, vel ultrices nisi malesuada ut. Proin mi arcu, consectetur et turpis ac, convallis auctor sapien."
   )
 end
+2.times do
+  Note.create!(
+    condo: @c,
+    title: "#{@notes.sample} #{@areas.sample}",
+    noteDate: Date.tomorrow,
+    note_category: NoteCategory.all.sample,
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta nibh et augue congue, eget iaculis ligula pharetra. Pellentesque ornare sit amet tellus nec hendrerit. Nunc vel elit sed arcu hendrerit convallis. Sed tortor massa, molestie ac ultricies ut, bibendum eu erat. Praesent risus ante, mattis a leo at, venenatis porttitor ante. Vestibulum egestas dolor elit, et eleifend dui aliquet et. Mauris id dolor vel nisl interdum euismod.
+    Phasellus ut varius diam, ac tristique velit. Praesent congue libero lacus, ut consequat turpis viverra sit amet. Vivamus neque purus, feugiat vitae feugiat eu, auctor et sapien. In euismod auctor orci, vel ornare ex aliquet eu. Suspendisse a faucibus ligula, vel varius sem. Ut erat lorem, venenatis nec dolor quis, hendrerit tempus augue. Aliquam leo nulla, interdum fermentum vulputate ut, semper et ex. In vehicula ultrices mi, nec commodo ante dictum ac. Curabitur fermentum, felis mollis venenatis ultricies, mi purus maximus magna, venenatis porta arcu purus vulputate arcu. Maecenas condimentum rhoncus tortor, vel ultrices nisi malesuada ut. Proin mi arcu, consectetur et turpis ac, convallis auctor sapien."
+  )
+end
 puts("Notas inseridas!")
+
+puts("Criando agendamentos")
+
+
+
+puts("Agendamentos inseridos!")
