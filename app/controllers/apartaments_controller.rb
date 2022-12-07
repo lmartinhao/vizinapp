@@ -4,6 +4,7 @@ class ApartamentsController < ApplicationController
     @notes = Note.all
     @last_notes = [@notes[-1], @notes[-2]]
     @schedules = Schedule.all
+    @meetings = Meeting.all
   end
 
   private

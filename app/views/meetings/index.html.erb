@@ -6,7 +6,9 @@
     </div>
 
     <div>
-
+      <% @meetings.each do |meeting| %>
+        <%= render meeting %>
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[show]
 
-   # GET /notes
+  # GET /notes
   def index
     @notes = Note.all
   end
@@ -13,7 +13,6 @@ class NotesController < ApplicationController
 
   def new
   end
-
 
   private
 
