@@ -54,14 +54,13 @@
           <% end %>
         </li>
         <li class="nav-item dropdown d-flex justify-content-around">
-          <p class="condo-user-type"><%= current_user.admin ? "Síndico" : "Morador" %></p>
+          <p class="condo-user-type"><%= current_user.user_name %></p>
           <% if current_user.avatar.key? %>
             <%= cl_image_tag current_user.avatar.key, crop: :thumb, gravity: :face, class: "avatar-sm dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar-sm dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <p class="dropdown-item"><%= current_user.user_name %></p>
             <p class="dropdown-item"><%= link_to "Página inicial", apartaments_path, class: "dropdown-item" %></p>
             <p class="dropdown-item"><%= link_to "Meu perfil", profile_path(current_user), class: "dropdown-item" %></p>
             <p class="dropdown-item"><%= link_to "Meus agendamentos", meetings_path(current_user), class: "dropdown-item" %></p>
