@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_234831) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_07_130809) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -120,6 +120,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_234831) do
     t.index ["document_category_id"], name: "index_documents_on_document_category_id"
   end
 
+  create_table "meetings", force: :cascade do |t|
+    t.bigint "area_id", null: false
+    t.bigint "user_id", null: false
+    t.date "schedule_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_meetings_on_area_id"
+    t.index ["user_id"], name: "index_meetings_on_user_id"
+  end
+
   create_table "note_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -182,6 +192,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_234831) do
   add_foreign_key "detachments", "detachment_categories"
   add_foreign_key "documents", "condos"
   add_foreign_key "documents", "document_categories"
+  add_foreign_key "meetings", "areas"
+  add_foreign_key "meetings", "users"
   add_foreign_key "notes", "condos"
   add_foreign_key "notes", "note_categories"
 end
