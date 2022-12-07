@@ -1,1 +1,32 @@
 <%= @detachments%>
+<div class="wrapper">
+  <div class= "container">
+    <div class="d-flex justify-content-start mt-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/1379/1379905.png" alt="documents-logo" class="logo mt-3">
+      <h1 class= "title mx-3">Meus anúncios</h1>
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+      <div class="box col-8 px-4 py-2 mt-2">
+        <ul id="lista-agenda">
+          <div class="no-padding">
+            <% @detachments.each do |detachment| %>
+                <%= render detachment unless detachment.nil? %>
+            <% end %>
+          </div>
+        </ul>
+        <div class="d-flex justify-content-around mt-5">
+          <div>
+            <%= link_to "Novo anúncio", new_detachment_path, class: "btn btn-success" %>
+          </div>
+          <div>
+            <%= link_to "Ir para o bazar", detachments_path, class: "btn btn-primary" %>
+          </div>
+          <div>
+            <%= link_to "Página inicial", root_path, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

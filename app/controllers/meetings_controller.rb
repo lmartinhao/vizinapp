@@ -20,7 +20,7 @@ class MeetingsController < ApplicationController
     @meeting = Meeting.new(meeting_params)
     @meeting.user = current_user
     if @meeting.save
-      redirect_to root_path
+      redirect_to schedules_path
       flash[:notice] = "Reserva concluída com sucesso!"
     else
       render :new, status: :unprocessable_entity
