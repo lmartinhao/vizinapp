@@ -13,7 +13,7 @@
       <%= link_to edit_meeting_path(meeting) do %>
         <i class="fa-solid fa-pen-to-square" style="color:#81B29A;"></i>
       <% end %>
-      <%= link_to meeting, method: :delete do %>
+      <%= link_to meeting_path(meeting), data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" } do %>
         <i class="fa-solid fa-circle-xmark px-3" style="color:#a92022;"></i>
       <% end %>
     </div>

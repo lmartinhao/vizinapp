@@ -1,5 +1,5 @@
 class MeetingsController < ApplicationController
-  before_action :set_meeting, only: %i[show]
+  before_action :set_meeting, only: %i[show edit update destroy]
 
   # GET /meetings
   def index
@@ -25,6 +25,22 @@ class MeetingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @meeting.update(meeting_params)
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @meeting.destroy
+    redirect_to root_url, notice: "Meeting was successfully destroyed."
   end
 
   private

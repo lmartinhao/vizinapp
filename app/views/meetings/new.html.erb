@@ -12,7 +12,7 @@
             <div class="col-6 form-login mb-5 mt-0">
               <%= simple_form_for @meeting do |f| %>
                 <%= f.error_notification %>
-                <div class="form-inputs d-flex justify-content-between">
+                <div class="form-inputs">
                   <div class="form-group p-2">
                     <h5 class="subtitle pb-2">Locações</h5>
                     <%= f.input :area_id, as: :select, collection: Area.all.collect { |area| [area.name, area.id] }, label: "Selecione uma área",
