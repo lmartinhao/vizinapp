@@ -49,6 +49,11 @@ class DetachmentsController < ApplicationController
     redirect_to detachments_path, notice: "Anúcio excluido com sucesso!"
   end
 
+  def my
+    @detachments = Detachment.where(apartament_id: current_user.apartament.id)
+  end
+
+
   private
 
   def set_detachment
