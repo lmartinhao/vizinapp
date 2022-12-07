@@ -31,8 +31,10 @@
             <div class="col-6">
               <h5 class="subtitle pb-2 text-center">Meus agendamentos</h5>
               <% @meetings.each do |meeting| %>
-                <%= render meeting %>
+              <% if meeting.user == current_user %>
+                <%= render meeting unless meeting.nil? %>
               <% end %>
+            <% end %>
             </div>
           </div>
         </div>

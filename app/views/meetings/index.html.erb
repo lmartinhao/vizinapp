@@ -5,10 +5,29 @@
       <h1 class= "title mx-3">Meus agendamentos</h1>
     </div>
 
-    <div>
-      <% @meetings.each do |meeting| %>
-        <%= render meeting %>
-      <% end %>
+    <div class="d-flex justify-content-center mt-4">
+      <div class="box col-8 px-4 py-2 mt-2">
+        <ul id="lista-agenda">
+          <div class="no-padding">
+            <% @meetings.each do |meeting| %>
+              <% if meeting.user == current_user %>
+                <%= render meeting unless meeting.nil? %>
+              <% end %>
+            <% end %>
+          </div>
+        </ul>
+        <div class="d-flex justify-content-around mt-5">
+          <div>
+            <%= link_to "Fazer outra reserva", new_meeting_path, class: "btn btn-success" %>
+          </div>
+          <div>
+            <%= link_to "Ir para agenda", schedules_path, class: "btn btn-primary" %>
+          </div>
+          <div>
+            <%= link_to "Página inicial", root_path, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

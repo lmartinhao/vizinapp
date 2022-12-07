@@ -14,5 +14,16 @@
         </div>
       <% end %>
     <% end %>
+    <div class="d-flex justify-content-around mt-5 mb-5">
+      <div>
+        <%= link_to "Fazer uma reserva", new_meeting_path, class: "btn btn-success" %>
+      </div>
+      <div>
+        <%= link_to "Meus agendamentos", schedules_path, class: "btn btn-primary" %>
+      </div>
+      <div>
+        <%= link_to "Página inicial", root_path, class: "btn btn-primary" %>
+      </div>
+    </div>
   </div>
 </div>
