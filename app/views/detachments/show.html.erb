@@ -1,0 +1,17 @@
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-8">
+        <div class="form-login mb-4">
+          <h2 class="mt-5 mb-3 title"><%= @detachment.title %></h2>
+          <p><%= @detachment.description %></p>
+          <%= cl_image_path @detachment.photo.key %>
+          <div class="mt-5 mb-5">
+            <%= link_to "Voltar ao Bazar", detachments_path, class:"btn btn-primary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

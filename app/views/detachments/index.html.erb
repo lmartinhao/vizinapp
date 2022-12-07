@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class= "container">
+    <div class="d-flex justify-content-start mt-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/1379/1379905.png" alt="documents-logo" class="logo mt-3">
+      <h1 class= "title mx-3">Bazar</h1>
+    </div>
+    <%= link_to "Desapegue", new_detachment_path %>
+    <% @detachments.each do |detachment| %>
+    <div class="card my-3">
+      <div class="card-header">
+        <%= detachment.detachment_category.name %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to detachment.title, detachment_path(detachment) %></h5>
+        <p class="card-text"><%= detachment.description %></p>
+        <% if current_user.apartament.id == detachment.apartament.id%>
+          <%= link_to "Editar", edit_detachment_path(detachment), class: "btn btn-info btn-sm"%>
+          <%= link_to "Excluir", detachment_path(detachment), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        <%end%>
+
+      </div>
+      <div class="card-footer text-muted">
+        <p>Dono do anúncio: <%= detachment.apartament.user.full_name %></p>
+        <p>Criado há <%= distance_of_time_in_words_to_now(detachment.created_at) %></p>
+      </div>
+    </div>
+      <% end %>
+  </div>
+</div>

@@ -47,11 +47,11 @@
           <% end %>
         </li>
         <li class="nav-item">
-          <%# if current_page?(notes_path) %>
-            <%#= link_to "Chat", notes_path, class: "nav-link active"  %>
-          <%# else %>
-            <%= link_to "Chat", "#", class: "nav-link" %>
-          <%# end %>
+          <% if current_page?(detachments_path) %>
+            <%= link_to "Bazar", detachments_path, class: "nav-link active"  %>
+          <% else %>
+            <%= link_to "Bazar", detachments_path, class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item dropdown d-flex justify-content-around">
           <p class="condo-user-type"><%= current_user.admin ? "Síndico" : "Morador" %></p>
@@ -61,6 +61,7 @@
             <%= image_tag "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png", class: "avatar-sm dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <p class="dropdown-item"><%= link_to "Perfil", profile_path(current_user), class: "dropdown-item" %></p>
             <p class="dropdown-item"><%= link_to "Página inicial", apartaments_path, class: "dropdown-item" %></p>
             <%=link_to "Sair", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
           </div>
