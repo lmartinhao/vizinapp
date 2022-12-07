@@ -5,11 +5,10 @@
   <div class="card-body">
     <h5 class="card-title"><%= document.title %></h5>
     <p class="card-text"><%= document.content %></p>
-    <p class="card-text"><%= document.document_file.key  %></p>
 
-    <%= link_to "Abrir Arquivo", notes_path, class:"btn btn-info btn-sm" %>
+    <a href="<%= cl_image_path(document.document_file.key) %>" class="btn btn-info btn-sm" target="_blank">Abrir arquivo</a>
   </div>
   <div class="card-footer text-muted">
-    Criado há <%= distance_of_time_in_words_to_now(document.created_at) %>
+    <p>Criado há <%= distance_of_time_in_words_to_now(document.created_at) %></p>
   </div>
 </div>

@@ -1,12 +1,15 @@
-<div class= "container">
-  <div class="col-7">
-    <h1 class= "title">Mural de recados</h1>
-  </div>
+<div class="wrapper">
+  <div class= "container">
+    <div class="d-flex justify-content-start mt-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/650/650661.png" alt="notes-logo" class="logo mt-3">
+      <h1 class= "title mx-3">Mural de recados</h1>
+    </div>
 
-  <div>
-    <% @notes.each do |note| %>
-      <%= render note %>
-    <% end %>
-  </div>
+    <div>
+      <% @notes.each do |note| %>
+        <%= render note %>
+      <% end %>
+    </div>
 
+  </div>
 </div>

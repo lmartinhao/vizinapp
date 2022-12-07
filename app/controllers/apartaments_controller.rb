@@ -3,6 +3,7 @@ class ApartamentsController < ApplicationController
     @apartament = policy_scope(Apartament)
     @notes = Note.all
     @last_notes = [@notes[-1], @notes[-2]]
+    @schedules = Schedule.all
   end
 
   private
