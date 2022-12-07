@@ -8,7 +8,9 @@
           <h2 class="mt-5 mb-3 title"><%= @note.title %></h2>
           <p><%= @note.content %></p>
           <div class="mt-5 mb-5">
-            <a href="<%= cl_image_path(@note.note_file.key) %>" class="btn btn-info btn-sm" target="_blank">Abrir arquivo</a>
+            <% unless @note.note_file.key.nil? %>
+            <a href="<%= cl_image_path(@note.note_file.key) unless @note.note_file.key.nil? %>" class="btn btn-info btn-sm" target="_blank">Abrir arquivo</a>
+            <% end %>
             <%= link_to "Voltar para Mural de recados", notes_path, class:"btn btn-primary btn-sm" %>
           </div>
         </div>
