@@ -21,7 +21,9 @@
         <h4 class= "subtitle">Meus agendamentos</h4>
         <ul id="lista-agenda">
           <div class="no-padding">
-
+            <% @meetings.each do |meeting| %>
+              <%= render meeting unless meeting.nil? %>
+            <% end %>
           </div>
         </ul>
       </div>

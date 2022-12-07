@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="d-flex justify-content-start mt-4">
+      <div class="d-flex justify-content-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/6213/6213988.png" alt="meeting-logo" class="logo mt-3">
+        <h1 class= "title mx-3">Faça sua reserva</h1>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-8">
+        <div class="d-flex justify-content-center mt-4">
+            <div class="col-6 form-login mb-5 mt-0">
+              <%= simple_form_for @meeting do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <div class="form-group p-2">
+                    <h5 class="subtitle pb-2">Locações</h5>
+                    <%= f.input :area_id, as: :select, collection: Area.all.collect { |area| [area.name, area.id] },
+                                autofocus: true,
+                                required: true %>
+                    <%= f.input :schedule_date, as: :date, html5: true,
+                                autofocus: true,
+                                required: true %>
+                  </div>
+                </div>
+                <div class="d-grid form-actions mt-4">
+                  <%= f.button :submit, "Reservar", class: "btn btn-success" %>
+                </div>
+              <% end %>
+            </div>
+            <div class="col-6">
+              <h5 class="subtitle pb-2 text-center">Meus agendamentos</h5>
+              <% @meetings.each do |meeting| %>
+                <%= render meeting %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

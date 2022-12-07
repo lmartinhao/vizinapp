@@ -1,8 +1,18 @@
 class DetachmentsController < ApplicationController
-  before_action :set_detachment, only: %i[ show edit update destroy ]
+  before_action :set_detachment, only: %i[show edit update destroy]
 
   def index
-    @detachments = Detachment.all
+    if params[:query].present?
+      #sql_query = "title ILIKE :query OR description ILIKE :query"
+      sql_query = <<~SQL
+        detachments.title @@ :query
+        OR detachments.description @@ :query
+      SQL
+      @detachments = Detachment.where(sql_query, query: "%#{params[:query]}%")
+      #raise
+    else
+      @detachments = Detachment.all
+    end
   end
 
   def show
@@ -16,7 +26,7 @@ class DetachmentsController < ApplicationController
     @detachment = Detachment.new(detachment_params)
     @detachment.apartament = current_user.apartament
     if @detachment.save
-      redirect_to detachments_path
+      redirect_to detachment_path(@detachment)
       flash[:notice] = "Seu anuncio foi criado com sucesso"
     else
       render :new, status: :unprocessable_entity

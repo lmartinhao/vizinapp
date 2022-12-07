@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="d-flex justify-content-start mt-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/2546/2546705.png" alt="meeting-logo" class="logo mt-3">
+      <h1 class= "title mx-3">Atualizar reserva</h1>
+    </div>
+    <div class="col-6">
+      <%= simple_form_for @meeting do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <div class="form-group p-2">
+
+            <%= f.input :area_id, as: :select, collection: Area.all.collect { |area| [area.name, area.id] }, label: "Áreas disponíveis",
+                        autofocus: true,
+                        required: true %>
+            <%= f.input :schedule_date, as: :date, html5: true, label: "Data",
+                        autofocus: true,
+                        required: true %>
+          </div>
+        </div>
+        <div class="d-grid form-actions mt-4">
+          <%= f.button :submit, "Atualizar reserva", class: "btn btn-success" %>
+        </div>
+      <% end %>
+      <div class="d-flex justify-content-start mt-5">
+        <%= link_to "Fazer outra reserva", new_meeting_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+
+  </div>
+</div>

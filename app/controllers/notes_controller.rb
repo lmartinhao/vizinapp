@@ -1,18 +1,18 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[show]
 
-   # GET /notes
+  # GET /notes
   def index
     @notes = Note.all
   end
 
   # GET /notes/1
   def show
+    @notes = Note.find(params[:id])
   end
 
   def new
   end
-
 
   private
 
