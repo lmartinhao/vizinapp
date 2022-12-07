@@ -1,2 +1,26 @@
-<h1>Detachments#new</h1>
-<p>Find me in app/views/detachments/new.html.erb</p>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-login mb-4">
+        <h2 class="title">Desapegue</h2>
+        <%= simple_form_for @detachment do |f| %>
+          <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.hidden_field :apartament, value: current_user.apartament%>
+            <%= f.input :title,
+                        required: false,
+                        autofocus: true %>
+            <%= f.input :description,
+                        required: true %>
+            <%= f.input :detachment_category, collection: DetachmentCategory.all.collect { |category| [category.name, category.id]},
+                        required: true %>
+          </div>
+          <div class="form-actions d-grid">
+            <%= f.button :submit, "Cadastrar", class:"btn btn-primary" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

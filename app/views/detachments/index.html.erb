@@ -4,12 +4,22 @@
       <img src="https://cdn-icons-png.flaticon.com/512/1379/1379905.png" alt="documents-logo" class="logo mt-3">
       <h1 class= "title mx-3">Bazar</h1>
     </div>
+    <%= link_to "Desapegue", new_detachment_path %>
+    <% @detachments.each do |detachment| %>
+    <div class="card my-3">
+      <div class="card-header">
+        <%= document.document_category.name %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= document.title %></h5>
+        <p class="card-text"><%= document.content %></p>
 
-    <div>
-      <% @detachments.each do |detachment| %>
-        <%#= render document %>
-        <p>teste</p>
-      <% end %>
+        <a href="<%= cl_image_path(document.document_file.key) %>" class="btn btn-info btn-sm" target="_blank">Abrir arquivo</a>
+      </div>
+      <div class="card-footer text-muted">
+        <p>Criado há <%= distance_of_time_in_words_to_now(document.created_at) %></p>
+      </div>
     </div>
+      <% end %>
   </div>
 </div>

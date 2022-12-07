@@ -1,10 +1,10 @@
 class DetachmentsController < ApplicationController
   def index
-
     @detachments = Detachment.all
   end
 
   def new
+    @detachment = Detachment.new
   end
 
   def show
