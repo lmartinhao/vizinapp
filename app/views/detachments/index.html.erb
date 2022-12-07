@@ -25,7 +25,7 @@
               <p class="card-text">Anunciante: <%= detachment.apartament.user.full_name %></p>
               <p class="card-text">Apto/Andar: <%= detachment.apartament.ap_number %>/<%= detachment.apartament.floor %></p>
             </div>
-            <div class="card-footer d-flex justify-center">
+            <div class="card-footer d-flex align-center">
               <small class="text-muted"><%= distance_of_time_in_words_to_now(detachment.created_at) %></small><div class="card-body">
                <% if current_user.apartament.id == detachment.apartament.id%>
                   <%= link_to "Editar", edit_detachment_path(detachment), class: "btn btn-info btn-sm"%>

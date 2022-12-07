@@ -3,10 +3,25 @@
   <div class="container">
     <div class="row d-flex justify-content-center">
       <div class="col-xs-12 col-sm-8 col-sm-offset-8">
-        <div class="form-login mb-4">
+        <div class="form-login mb-4 text-center">
           <h2 class="mt-5 mb-3 title"><%= @detachment.title %></h2>
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0 d-flex jusitfy-content-center">
+              <div class="col-md-4">
+                <%= cl_image_tag @detachment.photo.key, width: 300, height: 200, crop: :pad, class: "card-img-top decoration-none", 'aria-haspopup': true, 'aria-expanded': false %>
+              </div>
+              <div class="col-md-8 align-center">
+                <div class="card-body">
+                  <h5 class="card-title"><strong><%= @detachment.apartament.user.full_name %></strong></h5>
+                  <p class="card-text">Contato: <%= @detachment.apartament.user.email %></p>
+                  <p class="card-text">Apto: <%= @detachment.apartament.ap_number %></p>
+                  <p class="card-text">Andar: <%= @detachment.apartament.floor %></p>
+                  <p class="card-text"><small class="text-muted">Anunciado a <%= distance_of_time_in_words_to_now(@detachment.created_at) %></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
           <p><%= @detachment.description %></p>
-          <%= cl_image_tag @detachment.photo.key, crop: :thumb, gravity: :face, class: "dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="mt-5 mb-5">
             <%= link_to "Voltar ao Bazar", detachments_path, class:"btn btn-primary btn-sm" %>
           </div>

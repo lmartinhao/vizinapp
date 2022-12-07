@@ -26,7 +26,7 @@ class DetachmentsController < ApplicationController
     @detachment = Detachment.new(detachment_params)
     @detachment.apartament = current_user.apartament
     if @detachment.save
-      redirect_to detachments_path
+      redirect_to detachment_path(@detachment)
       flash[:notice] = "Seu anuncio foi criado com sucesso"
     else
       render :new, status: :unprocessable_entity
