@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      meeting: "Reserva"
+    attributes:
+      meeting:
+        area_id: "Locações"
+        area: "Locações"
+        schedule_date: "Data da reserva"
+        user_id: "Locatário"
+        user: "Locatário"

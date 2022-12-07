@@ -40,7 +40,7 @@ class MeetingsController < ApplicationController
 
   def destroy
     @meeting.destroy
-    redirect_to root_url, notice: "Meeting was successfully destroyed."
+    redirect_to root_url, notice: "Sua reserva foi apagada."
   end
 
   private

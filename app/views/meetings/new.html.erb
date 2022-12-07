@@ -15,10 +15,10 @@
                 <div class="form-inputs">
                   <div class="form-group p-2">
                     <h5 class="subtitle pb-2">Locações</h5>
-                    <%= f.input :area_id, as: :select, collection: Area.all.collect { |area| [area.name, area.id] }, label: "Selecione uma área",
+                    <%= f.input :area_id, as: :select, collection: Area.all.collect { |area| [area.name, area.id] },
                                 autofocus: true,
                                 required: true %>
-                    <%= f.input :schedule_date, as: :date, html5: true, label: "Selecione uma data",
+                    <%= f.input :schedule_date, as: :date, html5: true,
                                 autofocus: true,
                                 required: true %>
                   </div>
@@ -29,6 +29,7 @@
               <% end %>
             </div>
             <div class="col-6">
+              <h5 class="subtitle pb-2 text-center">Meus agendamentos</h5>
               <% @meetings.each do |meeting| %>
                 <%= render meeting %>
               <% end %>

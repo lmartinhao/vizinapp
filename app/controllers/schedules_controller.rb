@@ -7,6 +7,7 @@ class SchedulesController < ApplicationController
 
     start_date = params.fetch(:start_date, Date.today).to_date
     add_notes(start_date)
+    add_meetings(start_date)
     @schedules = Schedule.all
   end
 
@@ -31,6 +32,19 @@ class SchedulesController < ApplicationController
         end_time: note.noteDate,
         name: note.title,
         kind: "Evento"
+      )
+    end
+  end
+
+  def add_meetings(start_date)
+    @meetings = Meeting.where(schedule_date: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
+
+    @meetings.each do |meeting|
+      Schedule.create!(
+        start_time: meeting.schedule_date,
+        end_time: meeting.schedule_date,
+        name: "#{meeting.area.name} (#{meeting.user.user_name})",
+        kind: "Reserva"
       )
     end
   end

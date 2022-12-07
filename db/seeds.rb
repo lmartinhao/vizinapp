@@ -165,9 +165,3 @@ end
   )
 end
 puts("Notas inseridas!")
-
-puts("Criando agendamentos")
-
-
-
-puts("Agendamentos inseridos!")

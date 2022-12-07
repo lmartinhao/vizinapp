@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-start">
       <i class="fa-regular fa-calendar px-2" style="color:#F2CC8F;"></i>
       <% if meeting.schedule_date? %>
-        <p> <small><%= meeting.schedule_date.strftime('%m/%d') %></small> </p>
+        <p> <small><%= meeting.schedule_date.strftime('%d/%m') %></small> </p>
       <% end %>
     </div>
     <div>
