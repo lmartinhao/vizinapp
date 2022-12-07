@@ -1,16 +1,53 @@
 class DetachmentsController < ApplicationController
+  before_action :set_detachment, only: %i[ show edit update destroy ]
+
   def index
     @detachments = Detachment.all
+  end
+
+  def show
   end
 
   def new
     @detachment = Detachment.new
   end
 
-  def show
+  def create
+    @detachment = Detachment.new(detachment_params)
+    @detachment.apartament = current_user.apartament
+    if @detachment.save
+      redirect_to detachments_path
+      flash[:notice] = "Seu anuncio foi criado com sucesso"
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @detachment.update(detachment_params)
+      redirect_to detachment_path(@detachment), notice: "Anúncio alterado com sucesso!"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @detachment.destroy
+    redirect_to detachments_path, notice: "Anúcio excluido com sucesso!"
   end
 
   private
+
+  def set_detachment
+    @detachment = Detachment.find(params[:id])
+  end
+
+  def detachment_params
+    params.require(:detachment).permit(:title, :description, :detachment_category_id, :photo)
+  end
 
   def pundit_policy_scoped?
     true

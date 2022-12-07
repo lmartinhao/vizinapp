@@ -8,16 +8,20 @@
     <% @detachments.each do |detachment| %>
     <div class="card my-3">
       <div class="card-header">
-        <%= document.document_category.name %>
+        <%= detachment.detachment_category.name %>
       </div>
       <div class="card-body">
-        <h5 class="card-title"><%= document.title %></h5>
-        <p class="card-text"><%= document.content %></p>
+        <h5 class="card-title"><%= link_to detachment.title, detachment_path(detachment) %></h5>
+        <p class="card-text"><%= detachment.description %></p>
+        <% if current_user.apartament.id == detachment.apartament.id%>
+          <%= link_to "Editar", edit_detachment_path(detachment), class: "btn btn-info btn-sm"%>
+          <%= link_to "Excluir", detachment_path(detachment), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        <%end%>
 
-        <a href="<%= cl_image_path(document.document_file.key) %>" class="btn btn-info btn-sm" target="_blank">Abrir arquivo</a>
       </div>
       <div class="card-footer text-muted">
-        <p>Criado há <%= distance_of_time_in_words_to_now(document.created_at) %></p>
+        <p>Dono do anúncio: <%= detachment.apartament.user.full_name %></p>
+        <p>Criado há <%= distance_of_time_in_words_to_now(detachment.created_at) %></p>
       </div>
     </div>
       <% end %>
