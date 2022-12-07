@@ -1,7 +1,7 @@
 require "open-uri"
 
 puts 'Cleaning database'
-User.destroy_all
+#User.destroy_all
 
 @areas = [
   "Piscina",
