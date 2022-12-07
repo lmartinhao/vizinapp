@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    models:
+      detachment: "Bazar"
+    attributes:
+      detachment:
+        title: "Título"
+        description: "Descrição"
+        photo: "Foto"
+        apartament_id: "Apartamento"
+        detachment_category: "Categoria"
+        detachment_category_id: "Categoria"
