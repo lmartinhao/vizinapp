@@ -89,6 +89,14 @@ AreaCategory.create!(name: "Salão de Festas")
 
 puts("Note Categories inseridas!")
 
+puts("Criando Detachment Categories..")
+
+DetachmentCategory.create!(name: "Comprar")
+DetachmentCategory.create!(name: "Vender")
+DetachmentCategory.create!(name: "Doar")
+
+puts("Detachment Categories inseridas!")
+
 puts("Criando User admin..")
 file = URI.open("https://source.unsplash.com/featured/?profile")
 @user = User.create!(
