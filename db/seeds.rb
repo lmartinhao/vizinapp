@@ -21,19 +21,12 @@ puts 'Cleaning database'
   "Orçamento de reparo:"
 ]
 
-@tipos = [
-  "Condomínio",
-  "Edifício",
-  "Conjunto Habitacional",
-  "Torres"
-]
-
 puts("Criando User admin..")
 file = URI.open("https://source.unsplash.com/featured/?profile")
 @user = User.create!(
   user_name: "admin.user",
-  full_name: "User Test",
-  email: "user@test.com",
+  full_name: "Clorisvaldo Antunes",
+  email: "admin@resdjf.com",
   admin: true,
   password: "123123"
 )
@@ -43,32 +36,35 @@ puts("User admin inserido!")
 
 puts("Criando Condomínio..")
 @c = Condo.create!(
-  name: "#{@tipos.sample} #{Faker::Name.name}",
-  address: Faker::Address.street_name,
-  number: Faker::Address.building_number,
-  city: Faker::Address.city,
-  uf: Uf.all.sample,
+  name: "Residencial Jardim Florido",
+  address: "Le Wagon",
+  number: "1040",
+  city: "São Paulo",
+  uf: Uf.find(20),
   user: @user
 )
 puts("Condomínio inserido!")
 
 puts("Criando Apartamentos..")
-10.times do
-  Apartament.create!(
-    ap_number: rand(10..250),
-    floor: rand(1..25),
-    bedrooms: rand(2..4),
-    square_meters: rand(50..80),
-    garage: [true, false].sample,
-    condo: @c,
-    user: User.create!(
-      user_name: "Apartamento #{rand(10..250)}",
-      full_name: Faker::Name.name,
-      email: Faker::Internet.email,
-      admin: false,
-      password: "123123"
+4.times do |x|
+  4.times do |y|
+    ap_number = "#{x + 1}0#{y + 1}"
+    Apartament.create!(
+      ap_number: ap_number.to_s,
+      floor: x + 1,
+      bedrooms: rand(2..4),
+      square_meters: rand(50..80),
+      garage: [true, false].sample,
+      condo: @c,
+      user: User.create!(
+        user_name: "Apartamento #{ap_number}",
+        full_name: Faker::Name.name,
+        email: Faker::Internet.email,
+        admin: false,
+        password: "123123"
+      )
     )
-  )
+  end
 end
 puts("Apartamentos inseridos!")
 
