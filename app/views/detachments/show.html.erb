@@ -7,9 +7,11 @@
           <h2 class="my-5 title"><%= @detachment.title %></h2>
           <div class="my-3">
             <div class="row g-0 d-flex jusitfy-content-center">
+            <% if detachment.photo.key? %>
               <div class="col-md-4">
                 <%= cl_image_tag @detachment.photo.key, width: 300, height: 200, crop: :pad, class: "card-img-top decoration-none", 'aria-haspopup': true, 'aria-expanded': false %>
               </div>
+            <% end%>
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title subtitle"><strong><%= @detachment.apartament.user.full_name %></strong></h5>
