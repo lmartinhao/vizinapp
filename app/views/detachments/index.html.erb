@@ -20,9 +20,11 @@
       <% @detachments.each do |detachment| %>
         <div class="col">
           <div class="card h-100">
+          <% if detachment.photo.key? %>
             <div>
               <%= cl_image_tag detachment.photo.key, width: 400, height: 300, crop: :thumb, class: "card-img-top decoration-none", 'aria-haspopup': true, 'aria-expanded': false %>
             </div>
+            <% end %>
             <div class="d-flex justify-content-start">
               <div class="mt-4 px-3">
                 <% if detachment.apartament.user.avatar.key? %>
