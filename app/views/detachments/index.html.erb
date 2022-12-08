@@ -19,22 +19,34 @@
     <div class="row my-5 row-cols-1 row-cols-md-3 g-4">
       <% @detachments.each do |detachment| %>
         <div class="col">
-          <div class="card h-100 rounded">
-            <%= cl_image_tag detachment.photo.key, width: 400, height: 300, crop: :pad, class: "card-img-top decoration-none", 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="card-body text-center">
-              <h5 class="card-title"><%= link_to detachment.title, detachment_path(detachment), class: "subtitle" %></h5>
-              <p class="card-text">Categoria do anúncio: <strong><%= detachment.detachment_category.name %></strong></p>
-              <p class="card-text">Anunciante: <%= detachment.apartament.user.full_name %></p>
-              <p class="card-text">Apto <strong><%= detachment.apartament.ap_number %></strong> | <%= detachment.apartament.floor %>º andar</p>
+          <div class="card h-100">
+            <div>
+              <%= cl_image_tag detachment.photo.key, width: 400, height: 300, crop: :pad, class: "card-img-top decoration-none", 'aria-haspopup': true, 'aria-expanded': false %>
             </div>
-            <div class="card-footer d-flex align-center">
-              <small class="text-muted"><%= distance_of_time_in_words_to_now(detachment.created_at) %></small><div class="card-body">
-               <% if current_user.apartament.id == detachment.apartament.id%>
+            <div class="d-flex justify-content-start">
+              <div class="mt-4 px-3">
+                <%= cl_image_tag current_user.avatar.key, crop: :thumb, gravity: :face, class: "avatar-lg dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="card-title"><%= link_to detachment.title, detachment_path(detachment), class: "subtitle" %></h5>
+                <p class="card-text">Categoria: <strong><%= detachment.detachment_category.name %></strong></p>
+                <p class="card-text">Anunciante: <%= detachment.apartament.user.full_name %></p>
+                <p class="card-text">Apto <strong><%= detachment.apartament.ap_number %></strong> | <%= detachment.apartament.floor %>º andar</p>
+              </div>
+
+            </div>
+            <div class="card-footer text-center">
+              <small><small class="text-muted">Postado há <%= distance_of_time_in_words_to_now(detachment.created_at) %></small></small>
+            </div>
+            <div class="d-flex justify-content-center">
+              <div class="my-2">
+                <% if current_user.apartament.id == detachment.apartament.id%>
                   <%= link_to "Editar", edit_detachment_path(detachment), class: "btn btn-info btn-sm"%>
                   <%= link_to "Excluir", detachment_path(detachment), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
                 <%end%>
+              </div>
             </div>
-            </div>
+
           </div>
         </div>
       <% end %>
