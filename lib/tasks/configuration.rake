@@ -64,6 +64,7 @@ namespace :configuration do
 
       DocumentCategory.create!(name: "Regimento")
       DocumentCategory.create!(name: "Ata de Reunião")
+      DocumentCategory.create!(name: "Demonstrativo de despesas")
 
       puts("Note Categories inseridas!")
     else
@@ -76,6 +77,8 @@ namespace :configuration do
       AreaCategory.create!(name: "Churrasqueira")
       AreaCategory.create!(name: "Sala de cinema")
       AreaCategory.create!(name: "Salão de Festas")
+      AreaCategory.create!(name: "Espaço Gourmet")
+      AreaCategory.create!(name: "Salão de jogos")
 
       puts("Note Categories inseridas!")
     else
