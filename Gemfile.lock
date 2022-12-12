@@ -357,7 +357,7 @@ DEPENDENCIES
   inherited_resources!
   jbuilder
   jsbundling-rails
-  pg (~> 1.2.3)
+  pg (~> 1.1)
   puma (~> 5.0)
   pundit
   rails (~> 7.0.4)
